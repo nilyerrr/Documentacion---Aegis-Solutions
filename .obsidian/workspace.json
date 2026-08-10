@@ -11,12 +11,14 @@
             "id": "f6ed4e7594de5dd3",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Proyecto Final - Empresa 1/PROYECTO FINAL TI-203 2026-C2.pdf"
+                "file": "Proyecto Final - Empresa 1/Descripion de equipos.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "PROYECTO FINAL TI-203 2026-C2"
+              "icon": "lucide-file",
+              "title": "Descripion de equipos"
             }
           }
         ]
@@ -195,17 +197,20 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "realclaudian:Open Claudian": false
+      "realclaudian:Open Claudian": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "f6ed4e7594de5dd3",
   "lastOpenFiles": [
+    "Proyecto Final - Empresa 1/Estructura de empresa.md",
+    "Proyecto Final - Empresa 1/Estructura de Topologia.md",
+    "Untitled.base",
+    "Proyecto Final - Empresa 1/PROYECTO FINAL TI-203 2026-C2.pdf",
     "Proyecto Final - Empresa 1/Descripion de equipos.md",
     "Proyecto Final - Empresa 1/Scrip Santo Domingo/R-Santo Domingo.md",
     "Proyecto Final - Empresa 1/Scrip Romana/SW-9.md",
     "Proyecto Final - Empresa 1/Untitled.canvas",
-    "Proyecto Final - Empresa 1/Estructura de Topologia.md",
-    "Proyecto Final - Empresa 1/Estructura de empresa.md",
     "Untitled.md",
     "Proyecto Final - Empresa 1/Scrip Romana/R-Romana.md",
     "Proyecto Final - Empresa 1/Scrip Romana/SW-3.md",
@@ -218,7 +223,6 @@
     "Proyecto Final - Empresa 1/ISP-NUBE.md",
     "Proyecto Final - Empresa 1/Departamentos y VLSM.md",
     "Proyecto Final - Empresa 1/Scrip Santo Domingo/VPN en R-Santo Domingo.md",
-    "Proyecto Final - Empresa 1/PROYECTO FINAL TI-203 2026-C2.pdf",
     "Proyecto Final - Empresa 1/Scrip Santiago/R-Santiago.md",
     "Proyecto Final - Empresa 1/Scrip Romana",
     "Proyecto Final - Empresa 1/Scrip Santiago",
