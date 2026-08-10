@@ -69,7 +69,7 @@ interface Ethernet0/2
 
 interface e1/1
 description Hacia la sucursal de Puerto plata
-
+ip nat inside
 
 ! --- 3. Lista de Acceso y Regla de Traducción (PAT) ---
 access-list 100 permit ip any any
