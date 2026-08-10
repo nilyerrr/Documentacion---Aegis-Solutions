@@ -1,3 +1,8 @@
+
+### 🛡️ Perfil Corporativo: Aegis Solutions
+
+**Aegis Solutions** es un Proveedor de Servicios Gestionados de Seguridad y TI (MSSP, por sus siglas en inglés) enfocado en proteger, administrar y optimizar la infraestructura tecnológica de empresas medianas y grandes. Actuamos como el departamento externalizado de tecnología y ciberseguridad para organizaciones que manejan datos críticos y requieren alta disponibilidad operativa.
+
 ### 1. Portafolio de Servicios (Lo que ofrecemos al cliente)
 
 Nuestra empresa está dividida en tres pilares estrategicos:
