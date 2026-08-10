@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "359e873c2afad569",
+    "type": "split",
+    "children": [
+      {
+        "id": "39527e741ac11e2e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f6ed4e7594de5dd3",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Proyecto Final - Empresa 1/PROYECTO FINAL TI-203 2026-C2.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "PROYECTO FINAL TI-203 2026-C2"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c4c9351803b18b78",
+    "type": "split",
+    "children": [
+      {
+        "id": "498874d1cd60cb20",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3fd444f2ed9c5645",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "297a5cd9ed721122",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "path:\"Proyecto Final - Empresa 1/\" ",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f0d685c240e1ced5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 322.5
+  },
+  "right": {
+    "id": "ce1699b8b0f5744a",
+    "type": "split",
+    "children": [
+      {
+        "id": "b33a5a01d0a3ddb5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e65ce85aaee7191c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Welcome.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "ed2696fbdca4103f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Welcome.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "365c6ca982dac967",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2344ecc6f4e4ede5",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "e5cec360e847d471",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "fdb9e9e04053f267",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Claudian"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 451.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "realclaudian:Open Claudian": false
+    }
+  },
+  "active": "f6ed4e7594de5dd3",
+  "lastOpenFiles": [
+    "Proyecto Final - Empresa 1/Descripion de equipos.md",
+    "Proyecto Final - Empresa 1/Scrip Santo Domingo/R-Santo Domingo.md",
+    "Proyecto Final - Empresa 1/Scrip Romana/SW-9.md",
+    "Proyecto Final - Empresa 1/Untitled.canvas",
+    "Proyecto Final - Empresa 1/Estructura de Topologia.md",
+    "Proyecto Final - Empresa 1/Estructura de empresa.md",
+    "Untitled.md",
+    "Proyecto Final - Empresa 1/Scrip Romana/R-Romana.md",
+    "Proyecto Final - Empresa 1/Scrip Romana/SW-3.md",
+    "Proyecto Final - Empresa 1/Scrip Santo Domingo/SW-12.md",
+    "Proyecto Final - Empresa 1/Scrip Santo Domingo/SW-11.md",
+    "Proyecto Final - Empresa 1/Scrip Santo Domingo/SW-10.md",
+    "Proyecto Final - Empresa 1/Scrip Santo Domingo/SWM-2.md",
+    "Proyecto Final - Empresa 1/Scrip Santo Domingo/SWM-1.md",
+    "Proyecto Final - Empresa 1/Scrip Santo Domingo/nota tecnica.md",
+    "Proyecto Final - Empresa 1/ISP-NUBE.md",
+    "Proyecto Final - Empresa 1/Departamentos y VLSM.md",
+    "Proyecto Final - Empresa 1/Scrip Santo Domingo/VPN en R-Santo Domingo.md",
+    "Proyecto Final - Empresa 1/PROYECTO FINAL TI-203 2026-C2.pdf",
+    "Proyecto Final - Empresa 1/Scrip Santiago/R-Santiago.md",
+    "Proyecto Final - Empresa 1/Scrip Romana",
+    "Proyecto Final - Empresa 1/Scrip Santiago",
+    "Proyecto Final - Empresa 1.zip",
+    "Proyecto Final - Empresa 1/Scrip Santo Domingo",
+    "Pasted image 20260806194510.png",
+    "Pasted image 20260806135120.png",
+    "Welcome.md",
+    "Proyecto Final - Empresa 1",
+    "Untitled 1.md"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "conv-1785474419242-gq75pl4o0",
+  "providerId": "opencode",
+  "title": "analiza como tengo esta distrubucion para la creac...",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1785474419244,
+  "updatedAt": 1786370443362,
+  "lastResponseAt": 1786370443362,
+  "sessionId": "ses_0281c09e7ffefWyKG1gxHau4fR",
+  "selectedModel": "opencode:opencode/deepseek-v4-flash-free",
+  "providerState": {
+    "databasePath": "C:\\Users\\reyli\\AppData\\Roaming\\opencode\\opencode.db"
+  },
+  "currentNote": "Proyecto Final - Empresa 1.md",
+  "usage": {
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 65792,
+    "contextTokens": 71306,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "inputTokens": 5514,
+    "model": "opencode:opencode/deepseek-v4-flash-free",
+    "percentage": 36
+  }
+}
