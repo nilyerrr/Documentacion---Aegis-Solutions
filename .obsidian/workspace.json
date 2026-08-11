@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proyecto Final - Empresa 1/Scrip Santiago/Untitled.md",
+                "file": "Proyecto Final - Empresa 1/Scrip Santiago/RADIUS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "RADIUS"
             }
           }
         ]
@@ -203,8 +203,10 @@
   },
   "active": "f6ed4e7594de5dd3",
   "lastOpenFiles": [
+    "Proyecto Final - Empresa 1/Scrip Santiago/FTP.md",
+    "Proyecto Final - Empresa 1/Scrip Santiago/RADIUS.md",
+    "Proyecto Final - Empresa 1/Scrip Santiago/MAIL.md",
     "Proyecto Final - Empresa 1/Scrip Santiago/DNS.md",
-    "Proyecto Final - Empresa 1/Scrip Santiago/Untitled.md",
     "Proyecto Final - Empresa 1/Scrip Santiago/DHCP.md",
     "Proyecto Final - Empresa 1/Scrip Santiago/R-Santiago.md",
     "Proyecto Final - Empresa 1/Scrip Santiago/CONFIG DHCP 1.txt",
@@ -239,7 +241,6 @@
     "Proyecto Final - Empresa 1/Scrip Santiago",
     "Pasted image 20260806194510.png",
     "Pasted image 20260806135120.png",
-    "Welcome.md",
-    "Untitled 1.md"
+    "Welcome.md"
   ]
 }
