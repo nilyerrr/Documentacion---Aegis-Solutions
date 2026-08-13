@@ -102,7 +102,7 @@ interface Ethernet0/2
  ip address 10.255.255.1 255.255.255.252
  ip nat inside
  ip ospf 1 area 0
- duplex auto
+ duplex full
  no shutdown
 
 interface Ethernet0/1
@@ -110,7 +110,7 @@ interface Ethernet0/1
  ip address 10.255.255.5 255.255.255.252
  ip nat inside
  ip ospf 1 area 0
- duplex auto
+ duplex full
  no shutdown
 
 interface Ethernet0/0
@@ -158,7 +158,7 @@ line vty 0 4
 banner motd #
 *********************************************************************
 
-AEGIS SOLUTIONS
+AEGIS SOLUTIONS - SEDE SANTO DOMINGO
 ADVERTENCIA: ACCESO RESTRINGIDO.
 Toda actividad en este dispositivo esta siendo monitorizada.
 **************************************************************************

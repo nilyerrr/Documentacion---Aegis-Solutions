@@ -61,10 +61,11 @@ interface Port-channel1
  no shutdown
 
 banner motd #
-*******************************************************
-AEGIS SOLUTIONS
-ACCESO NO AUTORIZADO ESTA ESTRICTAMENTE PROHIBIDO.
-*******************************************************
+**************************************************************************
+AEGIS-2026
+ADVERTENCIA: ACCESO RESTRINGIDO.
+Toda actividad en este dispositivo esta siendo monitorizada.
+*************************************************************************
 #
 end
 write memory

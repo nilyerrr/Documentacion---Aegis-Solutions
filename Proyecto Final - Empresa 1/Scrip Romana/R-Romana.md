@@ -40,6 +40,24 @@ ip dhcp pool VLAN210_DIR_REGIONAL
  default-router 10.0.16.129
 dns-server 8.8.8.8 8.8.4.4
 
+! --- Parche DHCP relay (bug PNETLab) ---
+ip dhcp relay information trust-all
+
+! --- ISAKMP / IPsec para el DMVPN ---
+crypto isakmp policy 10
+ encr aes 256
+ hash sha256
+ authentication pre-share
+ group 14
+ lifetime 3600
+crypto isakmp key AEGIS-2026-VPN address 0.0.0.0 0.0.0.0
+
+crypto ipsec transform-set AEGIS-TS esp-aes 256 esp-sha256-hmac
+ mode transport
+
+crypto ipsec profile AEGIS-PROFILE
+ set transform-set AEGIS-TS
+
 ! --- Interfaz VPN (DMVPN Spoke) ---
 interface Tunnel1
  description TUNNEL SPOKE LA ROMANA
@@ -128,9 +146,11 @@ line vty 0 4
  exec-timeout 5 0
 
 banner motd #
+**************************************************************************
 AEGIS-2026
 ADVERTENCIA: ACCESO RESTRINGIDO.
 Toda actividad en este dispositivo esta siendo monitorizada.
+*************************************************************************
 #
 no ip http server
 no ip http secure-server

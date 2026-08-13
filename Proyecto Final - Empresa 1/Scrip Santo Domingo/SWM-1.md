@@ -176,10 +176,9 @@ line vty 0 4
 
 banner motd #
 *******************************************************
-CECOMPE - SOC
-PROYECTO FINAL TI-203
-MATRICULA: 2025-2253
-ACCESO NO AUTORIZADO ESTA ESTRICTAMENTE PROHIBIDO.
+AEGIS SOLUTIONS - SEDE SANTO DOMINGO
+ADVERTENCIA: ACCESO RESTRINGIDO.
+Toda actividad en este dispositivo esta siendo monitorizada.
 *******************************************************
 #
 end
