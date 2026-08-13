@@ -1,4 +1,3 @@
-
 3. Servidor Ubuntu — IP fija 10.0.10.2/23
 
 sudo nano /etc/netplan/01-netcfg.yaml
