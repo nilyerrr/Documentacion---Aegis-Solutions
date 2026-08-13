@@ -18,22 +18,22 @@ tags:
 
 ## 📋 Tabla Maestra (Consolidada)
 
-| # | Integrante | Cargo Corporativo | Nivel | Equipo Técnico | Rol Dual |
-|---|---|---|---|---|---|
-| 1 | **Reylin Santana** | CEO & CISO | Liderazgo | Seguridad | ✅ Sí |
-| 2 | **Neury** | CTO & Arquitecto de Red | Liderazgo | Redes y Servicios | ✅ Sí |
-| 3 | **Starlin** | Lead Full-Stack Developer | Ejecución | Redes y Servicios | ✅ Sí |
-| 4 | **Randy** | DevOps & Release Engineer | Ejecución | Doc. y Planificación IP | ✅ Sí |
-| 5 | **Franchesca** | Compliance & Procurement Manager | Ejecución | Conf. Básica (L2) | ✅ Sí |
-| 6 | **Darling** | Technical Writer & Document Controller | Ejecución | Doc. y Planificación IP | ✅ Sí |
+| #   | Integrante         | Cargo Corporativo                      | Nivel     | Equipo Técnico           | Rol Dual |
+| --- | ------------------ | -------------------------------------- | --------- | ------------------------ | -------- |
+| 1   | **Reylin Santana** | CEO & CISO                             | Liderazgo | Seguridad                | ✅ Sí     |
+| 2   | **Neury**          | CTO & Arquitecto de Red                | Liderazgo | Redes y Servicios        | ✅ Sí     |
+| 3   | **Starlin**        | Lead Full-Stack Developer              | Ejecución | Redes y Servicios        | ✅ Sí     |
+| 4   | **Randy**          | DevOps & Release Engineer              | Ejecución | Doc. y Conf. Básica (L2) | ✅ Sí     |
+| 5   | **Franchesca**     | Compliance & Procurement Manager       | Ejecución | Planificación IP         | ✅ Sí     |
+| 6   | **Darling**        | Technical Writer & Document Controller | Ejecución | Doc. y Conf. Básica (L2) | ✅ Sí     |
 
 ---
 
 ## 🏛️ Organigrama Funcional
 
 ```
-                    ┌─────────────────────┐
-                    │   LIDERAZGO DIRECTIVO │
+                    ┌─────────────────── ──┐
+                    │  LIDERAZGO DIRECTIVO │
                     └──────┬───────┬───────┘
                   ┌────────┘       └────────┐
         ┌─────────┴─────────┐     ┌─────────┴─────────┐

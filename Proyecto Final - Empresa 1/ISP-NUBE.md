@@ -40,6 +40,12 @@ write memory
 
 configure terminal
 
+ip route 10.0.0.0 255.255.254.0 1.0.0.14
+ip route 10.0.2.0 255.255.254.0 1.0.0.14
+ip route 10.0.4.0 255.255.254.0 1.0.0.14
+ip route 10.0.6.0 255.255.254.0 1.0.0.14
+ip route 10.0.17.64 255.255.255.240 1.0.0.14
+
 ! --- 1. Interfaz hacia la Nube  ---
 interface Ethernet1/0
  description ENLACE A INTERNET CLOUD (CLARO)
