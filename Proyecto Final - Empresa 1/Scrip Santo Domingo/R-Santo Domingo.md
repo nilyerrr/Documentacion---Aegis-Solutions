@@ -68,6 +68,21 @@ ip dhcp pool VLAN70_Marketing
  default-router 10.0.16.1
 dns-server 8.8.8.8 8.8.4.4
 
+! --- 5. ISAKMP / IPsec para el DMVPN (esto va ADEMÁS en el hub, ver sección 2) ---
+crypto isakmp policy 10
+ encr aes 256
+ hash sha256
+ authentication pre-share
+ group 14
+ lifetime 3600
+crypto isakmp key AEGIS-2026-VPN address 0.0.0.0 0.0.0.0
+
+crypto ipsec transform-set AEGIS-TS esp-aes 256 esp-sha256-hmac
+ mode transport
+
+crypto ipsec profile AEGIS-PROFILE
+ set transform-set AEGIS-TS
+
 ! --- 5. Interfaz VPN (DMVPN HUB) ---
 interface Tunnel1
  description TUNNEL HUB SANTO DOMINGO
