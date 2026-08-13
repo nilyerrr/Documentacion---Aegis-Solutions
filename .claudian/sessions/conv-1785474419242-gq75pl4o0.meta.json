@@ -4,8 +4,8 @@
   "title": "analiza como tengo esta distrubucion para la creac...",
   "titleGenerationStatus": "failed",
   "createdAt": 1785474419244,
-  "updatedAt": 1786370443362,
-  "lastResponseAt": 1786370443362,
+  "updatedAt": 1786595534204,
+  "lastResponseAt": 1786595534204,
   "sessionId": "ses_0281c09e7ffefWyKG1gxHau4fR",
   "selectedModel": "opencode:opencode/deepseek-v4-flash-free",
   "providerState": {
@@ -14,12 +14,12 @@
   "currentNote": "Proyecto Final - Empresa 1.md",
   "usage": {
     "cacheCreationInputTokens": 0,
-    "cacheReadInputTokens": 65792,
-    "contextTokens": 71306,
+    "cacheReadInputTokens": 0,
+    "contextTokens": 100212,
     "contextWindow": 200000,
     "contextWindowIsAuthoritative": true,
-    "inputTokens": 5514,
+    "inputTokens": 100212,
     "model": "opencode:opencode/deepseek-v4-flash-free",
-    "percentage": 36
+    "percentage": 50
   }
 }

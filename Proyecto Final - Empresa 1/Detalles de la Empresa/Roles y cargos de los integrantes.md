@@ -1,102 +1,136 @@
+---
+titulo: Roles y Cargos de los Integrantes — Aegis Solutions
+empresa: Aegis Solutions (MSSP)
+materia: TI-203 — Proyecto Final 2026-C2
+equipo: 6 integrantes
+estado: Organizado y consolidado
+tags:
+  - ciberseguridad
+  - organigrama
+  - proyecto-final
+---
 
-### 1. Nivel de Liderazgo (La Directiva)
+# 👥 Roles y Cargos de los Integrantes — Aegis Solutions
 
-|**Rol**|**Nombre**|**Cargo Corporativo**|**Responsabilidad**|
+> **Equipo:** 6 integrantes. Todos cuentan con usuario activo en la infraestructura (RADIUS, FTP y Correo) según los scripts de [[RADIUS.md|Santiago]].
+
+---
+
+## 📋 Tabla Maestra (Consolidada)
+
+| # | Integrante | Cargo Corporativo | Nivel | Equipo Técnico | Rol Dual |
+|---|---|---|---|---|---|
+| 1 | **Reylin Santana** | CEO & CISO | Liderazgo | Seguridad | ✅ Sí |
+| 2 | **Neury** | CTO & Arquitecto de Red | Liderazgo | Redes y Servicios | ✅ Sí |
+| 3 | **Starlin** | Lead Full-Stack Developer | Ejecución | Redes y Servicios | ✅ Sí |
+| 4 | **Randy** | DevOps & Release Engineer | Ejecución | Doc. y Planificación IP | ✅ Sí |
+| 5 | **Franchesca** | Compliance & Procurement Manager | Ejecución | Conf. Básica (L2) | ✅ Sí |
+| 6 | **Darling** | Technical Writer & Document Controller | Ejecución | Doc. y Planificación IP | ✅ Sí |
+
+---
+
+## 🏛️ Organigrama Funcional
+
+```
+                    ┌─────────────────────┐
+                    │   LIDERAZGO DIRECTIVO │
+                    └──────┬───────┬───────┘
+                  ┌────────┘       └────────┐
+        ┌─────────┴─────────┐     ┌─────────┴─────────┐
+        │ Reylin Santana    │     │ Neury             │
+        │ CEO & CISO        │     │ CTO & Arq. de Red │
+        │ Seguridad / SOC   │     │ LAN/WAN / DMVPN   │
+        └─────────┬─────────┘     └─────────┬─────────┘
+                  └──────────┬──────────────┘
+                             │
+              ┌──────────────┴───────────────────────────┐
+              │        NIVEL DE EJECUCIÓN                │
+              ├──────────────┬──────────────┬────────────┼──────────────┐
+              │              │              │            │              │
+    ┌─────────┴────────┐ ┌───┴─────────┐ ┌──┴───────┐ ┌──┴───────┐ ┌────┴──────┐
+    │ A. Conf. Básica  │ │ B. Redes y  │ │ C. Segur.│ │ D. Doc. y │ │ (mismo    │
+    │    (L2)          │ │   Servicios │ │          │ │   Planif. │ │  equipo)  │
+    │ Franchesca       │ │ Neury,      │ │ Reylin   │ │ Randy,    │ │           │
+    │                  │ │ Starlin     │ │ (dual)   │ │ Darling   │ │           │
+    └──────────────────┘ └────────────┘ └──────────┘ └───────────┘ └───────────┘
+                             │
+              ┌──────────────┴──────────────┐
+              │    SOPORTE OPERATIVO        │
+              ├── Starlin (servidores)      │
+              └── Franchesca (legal/cotiz.) │
+```
+
+---
+
+## 🎖️ Nivel 1 — Liderazgo Directivo
+
+Este equipo reporta a la instancia superior de la directiva empresarial.
+
+| Rol | Nombre | Cargo Corporativo | Responsabilidad |
 |---|---|---|---|
-|**Líder**|Reylin Santana|**CEO & CISO** _(Chief Executive / Information Security Officer)_|Visión estratégica de la empresa, diseño de arquitecturas de seguridad, implementación de protocolos defensivos y monitoreo.|
-|**Co-Líder**|Neury|**CTO** _(Chief Technology Officer)_ **& Arquitecto de Red**|Diseño de alto nivel de la infraestructura de red empresarial, estructuración de topologías, enrutamiento y conectividad.|
+| **Líder** | Reylin Santana | **CEO & CISO** | Visión estratégica, diseño de arquitecturas de seguridad, implementación de protocolos defensivos y monitoreo del SOC. |
+| **Co-Líder** | Neury | **CTO & Arquitecto de Red** | Diseño de alto nivel de la infraestructura de red, estructuración de topologías, enrutamiento y conectividad WAN. |
 
-### 2. Nivel de Ejecución — Ingeniería y Desarrollo
+---
 
-|**Área**|**Nombre**|**Cargo**|**Responsabilidades**|
+## 🛠️ Nivel 2 — Ejecución (Equipos Especializados)
+
+### A. Equipo de Configuración Básica — Estructura L2
+
+| Área | Nombre | Cargo | Responsabilidades |
 |---|---|---|---|
-|**Desarrollo Web**|Starlin|**Lead Full-Stack Developer**|Diseño de la experiencia de usuario (Front-end), estructuración lógica de los servidores (Back-end) y bases de datos.|
-|**Control de Versiones**|Randy|**DevOps & Release Engineer**|Administración de repositorios en GitHub, integración continua, control de versiones del código y despliegue seguro.|
+| **Conf. Básica** | Franchesca | **Compliance & Procurement Manager** *(rol técnico dual)* | Configuración de VLANs y puertos de acceso, redundancia de Capa 2 (STP) y administración de los switches de acceso. |
 
-### 3. Nivel Corporativo, Legal y Entregables
+### B. Equipo de Redes y Servicios — Conectividad L3
 
-|**Área**|**Nombre**|**Cargo**|**Responsabilidades**|
+| Área | Nombre | Cargo | Responsabilidades |
 |---|---|---|---|
-|**Legal y Adquisiciones**|Franchesca|**Compliance & Procurement Manager**|Regulación de la legislación empresarial, auditoría de normativas y elaboración de cotizaciones/presupuestos de equipos.|
-|**Documentación**|Darling|**Technical Writer & Document Controller**|Elaboración de diagramas lógicos/físicos, registro de configuraciones, bitácoras de red y manuales de entregables.|
+| **Enrutamiento** | Neury | **CTO & Arquitecto de Red** *(rol dual)* | Protocolos de enrutamiento (OSPF multi-área), traducción de direcciones (NAT) y redundancia de primer salto (HSRP). |
+| **Servidores** | Starlin | **Lead Full-Stack Developer** *(rol dual)* | Configuración, despliegue y mantenimiento de servidores empresariales (Web, Correo, FTP, DNS, RADIUS) en la topología. |
 
+### C. Equipo de Seguridad — Protección y Protocolos
 
-[ LIDERAZGO DIRECTIVO ]
-                                  |
-            ---------------------------------------------
-            |                                           |
-    [ Reylin Santana ]                              [ Neury ]
-      CEO & CISO                               CTO & Arq. de Red
- (Seguridad y Protocolos)                   (Diseño y Estructura LAN/WAN)
-            |                                           |
-            ---------------------------------------------
-                                  |
-                   [ INGENIERÍA, DESARROLLO Y CORPORATIVO ]
-                                  |
-         -----------------------------------------------------------
-         |                 |                   |                   |
-    [ Starlin ]       [ Randy ]         [ Franchesca ]        [ Darling ]
- Full-Stack Dev.    DevOps Engineer   Compliance Manager    Technical Writer
-  (Front & Back)    (GitHub / Code)  (Legal & Cotizaciones) (Documentación)
-  
-  
-  
-  ### 2.1. Nivel de Liderazgo
+| Área | Nombre | Cargo | Responsabilidades |
+|---|---|---|---|
+| **Seguridad** | Reylin Santana | **CEO & CISO** *(rol dual)* | Despliegue de **DMVPN** para comunicaciones seguras inter-sucursales, Port Security para control de acceso físico y ACLs avanzadas para blindar la red. |
 
+> ⚠️ **Corrección:** el documento anterior decía "VPN IPsec"; el proyecto implementa **DMVPN (GRE + NHRP)**, según [[Estructura de Topologia.md|topología]] y los scripts de enrutamiento.
 
-- **Reylin Santana (Líder - CISO y Arquitecto de Seguridad):** Responsable de la visión técnica general de protección, políticas defensivas y diseño de la seguridad de la infraestructura.
-    
-- **Neury (Co-líder - Arquitecto de Red):** Centrado en el diseño de la topología, la conectividad WAN y la interconexión inteligente entre las diferentes sedes.
-    
+### D. Equipo de Documentación y Planificación IP
 
-Este equipo de liderazgo reporta directamente a la instancia superior de la directiva empresarial.
+| Área | Nombre | Cargo | Responsabilidades |
+|---|---|---|---|
+| **Planificación IP** | Randy | **DevOps & Release Engineer** *(rol dual)* | Diseño del esquema de direccionamiento (VLSM), tabla de asignación de direcciones y control de versiones (GitHub). |
+| **Entregables** | Darling | **Technical Writer & Document Controller** | Diagramas lógicos/físicos, registro de configuraciones, bitácoras de red y manuales de entregables. |
 
-### 2.2. Nivel de Ejecución: Ingenieros de Implementación
+---
 
-Bajo la dirección del liderazgo, el grupo se subdivide en cuatro equipos especializados, cada uno con una tarea y requisitos clave definidos:
+## 🔧 Nivel 3 — Soporte Operativo
 
-**A. Equipo de Conf. Básica** Este grupo maneja los fundamentos de la red local y la segmentación.
+| Nombre | Área de Soporte | Responsabilidad |
+|---|---|---|
+| **Starlin** | Servidores | Soporte técnico continuo de servidores y coordinación de proyectos web. |
+| **Franchesca** | Legal y Adquisiciones | Registros operativos, normativas empresariales y costes de equipos estructurados y actualizados. |
 
-- **Miembro:** Franchesca.
-    
-- **Tarea Principal:** Estructura L2.
-    
-- **Requerimientos Clave:** Configuración de VLANs y puertos de acceso, implementación de redundancia de Capa 2 y administración de los switches de la capa de acceso para los usuarios.
-    
+---
 
-**B. Equipo de Redes y Servicios** Responsable de la conectividad, el enrutamiento de datos y la disponibilidad de las aplicaciones.
+## 📦 Matriz de Responsabilidades por Entregable
 
-- **Miembros:** Neury (rol dual), Starlin.
-    
-- **Tarea Principal:** Conectividad L3 y Servidores.
-    
-- **Requerimientos Clave:** Neury implementa los protocolos de enrutamiento (OSPF), traducción de direcciones y redundancia de primer salto (HSRP). Starlin se encarga de la configuración, despliegue y mantenimiento de los servidores empresariales (Web, Correo, FTP) dentro de la topología.
-    
+| Entregable del proyecto | Responsable(s) | Estado |
+|---|---|---|
+| Topología y diseño LAN/WAN | Neury | ✅ |
+| Scripts de Santo Domingo (R-SD, SWM-1/2, SW-10/11/12) | Reylin + Neury | ✅ |
+| Scripts de La Romana (R-ROMANA, SW-3, SW-9) | Franchesca + Starlin | ✅ |
+| Scripts de Santiago (R-SANTIAGO, SWM-1/Sw-2, servicios) | Starlin + Randy | ⏳ Fase 2 |
+| VLSM y tabla de direccionamiento | Randy + Darling | ✅ |
+| Documentación y diagramas | Darling | ✅ |
+| Servicios de red (DHCP, DNS, FTP, MAIL, RADIUS) | Starlin | ⏳ Fase 2 |
+| Seguridad perimetral (DMVPN, ACLs, Port Security) | Reylin | ✅ |
 
-**C. Equipo de Seguridad** Encargado de proteger la infraestructura, mitigar riesgos y asegurar las comunicaciones.
+---
 
-- **Miembro:** Reylin Santana (rol dual).
-    
-- **Tarea Principal:** Protección y Protocolos de Seguridad.
-    
-- **Requerimientos Clave:** Despliegue de VPN IPsec para comunicaciones seguras inter-sucursales, Port Security para control de acceso físico, y configuración de Listas de Control de Acceso (ACLs) avanzadas para blindar la red.
-    
+## ⚠️ Notas de consistencia
 
-**D. Equipo de Documentación y Planificación IP** Crucial para la estructuración lógica, la persistencia del conocimiento y la visualización teórica de la red.
-
-- **Miembros:** Randy, Darling.
-    
-- **Tarea Principal:** VLSM y Entregables para informes.
-    
-- **Requerimientos Clave:** Diseño completo del esquema de direccionamiento IP (VLSM), creación de la tabla de asignación de direcciones exactas, control de versiones (GitHub) y registro de la comunicación entre sistemas.
-    
-
-### 2.3. Nivel de Soporte Operativo
-
-Este nivel se encarga de la operación continua tras la fase de implementación.
-
-- **Técnicos de Soporte:** Un grupo que incluye roles especializados y localizados:
-    
-    - **Starlin:** Enfocado en el soporte técnico continuo de los servidores y coordinación de proyectos web.
-        
-    - **Franchesca:** Responsable de la "Legislación y Cotización", asegurando que los registros operativos, normativas empresariales y los costes de equipos estén estructurados y actualizados.
+1. **Rol dual**: todos los integrantes cumplen un cargo corporativo *y* un rol técnico en la implementación. Se uniformizó la nomenclatura.
+2. **VLSM**: la responsabilidad principal recae en Randy/Darling (Planificación IP), aunque el diseño técnico de red es de Neury — confirmar si es el reparto deseado.
+3. La asignación de scripts por sede en la matriz es una **propuesta de trazabilidad** basada en los roles definidos; ajustar si el reparto real fue otro.

@@ -185,7 +185,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 718.5
+    "width": 376.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,10 +203,11 @@
   },
   "active": "f6ed4e7594de5dd3",
   "lastOpenFiles": [
+    "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de Topologia.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de empresa.md",
-    "Proyecto Final - Empresa 1/Detalles de la Empresa/Roles y cargos de los integrantes.md",
-    "Proyecto Final - Empresa 1/Departamentos y VLSM.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Descripion de equipos.md",
+    "Proyecto Final - Empresa 1/Departamentos y VLSM.md",
+    "Proyecto Final - Empresa 1/Detalles de la Empresa/Roles y cargos de los integrantes.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa",
     "Proyecto Final - Empresa 1/Scrip Santiago/RADIUS.md",
     "Proyecto Final - Empresa 1/Scrip Santiago/MAIL.md",
@@ -222,7 +224,6 @@
     "Proyecto Final - Empresa 1/Scrip Santiago/CONFIG DNS.txt",
     "Proyecto Final - Empresa 1/Scrip Santiago/CONFIG DHCP.txt",
     "Proyecto Final - Empresa 1/Scrip Santiago/CONFIG RADIUS.txt",
-    "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de Topologia.md",
     "Proyecto Final - Empresa 1/Scrip Romana/R-Romana.md",
     "Proyecto Final - Empresa 1/ISP-NUBE.md",
     "Untitled.base",
