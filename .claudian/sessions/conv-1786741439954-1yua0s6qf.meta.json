@@ -1,0 +1,25 @@
+{
+  "id": "conv-1786741439954-1yua0s6qf",
+  "providerId": "opencode",
+  "title": "hola",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1786741439961,
+  "updatedAt": 1786741593224,
+  "lastResponseAt": 1786741593224,
+  "sessionId": "ses_ffde93772ffe5OAdiGuvMmTFaX",
+  "selectedModel": "opencode:opencode/mimo-v2.5-free",
+  "providerState": {
+    "databasePath": "C:\\Users\\reyli\\AppData\\Roaming\\opencode\\opencode.db"
+  },
+  "currentNote": "Proyecto Final - Empresa 1/Detalles de la Empresa/Cotizacion por nuestros servicios.md",
+  "usage": {
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 24576,
+    "contextTokens": 24851,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "inputTokens": 275,
+    "model": "opencode:opencode/mimo-v2.5-free",
+    "percentage": 12
+  }
+}

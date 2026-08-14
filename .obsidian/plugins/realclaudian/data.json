@@ -4,8 +4,13 @@
       {
         "tabId": "tab-1785474405059-6p5p3oe",
         "conversationId": "conv-1785474419242-gq75pl4o0"
+      },
+      {
+        "draftModel": "opencode:opencode/mimo-v2.5-free",
+        "tabId": "tab-1786741413248-edjdtrz",
+        "conversationId": "conv-1786741439954-1yua0s6qf"
       }
     ],
-    "activeTabId": "tab-1785474405059-6p5p3oe"
+    "activeTabId": "tab-1786741413248-edjdtrz"
   }
 }
