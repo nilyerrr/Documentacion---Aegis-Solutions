@@ -66,10 +66,10 @@ tags:
 
 Este equipo reporta a la instancia superior de la directiva empresarial.
 
-| Rol | Nombre | Cargo Corporativo | Responsabilidad |
-|---|---|---|---|
-| **Líder** | Reylin Santana | **CEO & CISO** | Visión estratégica, diseño de arquitecturas de seguridad, implementación de protocolos defensivos y monitoreo del SOC. |
-| **Co-Líder** | Neury | **CTO & Arquitecto de Red** | Diseño de alto nivel de la infraestructura de red, estructuración de topologías, enrutamiento y conectividad WAN. |
+| Rol          | Nombre         | Cargo Corporativo           | Responsabilidad                                                                                                        |
+| ------------ | -------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Líder**    | Reylin Santana | **CEO & CISO**              | Visión estratégica, diseño de arquitecturas de seguridad, implementación de protocolos defensivos y monitoreo del SOC. |
+| **Co-Líder** | Neury          | **CTO & Arquitecto de Red** | Diseño de alto nivel de la infraestructura de red, estructuración de topologías, enrutamiento y conectividad WAN.      |
 
 ---
 
