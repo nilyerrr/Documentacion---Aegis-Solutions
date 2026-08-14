@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proyecto Final - Empresa 1/Detalles de la Empresa/Roles y cargos de los integrantes.md",
+                "file": "Proyecto Final - Empresa 1/Detalles de la Empresa/Cotizacion por nuestros servicios.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Roles y cargos de los integrantes"
+              "title": "Cotizacion por nuestros servicios"
             }
           }
         ]
@@ -185,7 +185,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 578.5
+    "width": 637.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,9 +202,9 @@
   },
   "active": "f6ed4e7594de5dd3",
   "lastOpenFiles": [
+    "Proyecto Final - Empresa 1/Detalles de la Empresa/Roles y cargos de los integrantes.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de Topologia.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de empresa.md",
-    "Proyecto Final - Empresa 1/Detalles de la Empresa/Roles y cargos de los integrantes.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Descripion de equipos.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Cotizacion por nuestros servicios.md",
     "Pasted image 20260814165002.png",

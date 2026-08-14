@@ -1,12 +1,14 @@
 ---
-
-**Empresa:** AEGIS Solutions  
-**Tipo:** MSSP (Managed Security Service Provider)  
-**Modelo de Negocio:** Suscripción mensual + Servicios bajo demanda  
-**Mercado Objetivo:** Empresas medianas y grandes (50–1,000+ empleados) con datos sensibles y múltiples sucursales  
-**Fecha de cotización:** 2026  
-**Moneda:** USD  
-
+empresa: AEGIS Solutions
+tipo: MSSP (Managed Security Service Provider)
+modelo_de_negocio: Suscripción mensual + Servicios bajo demanda
+mercado_objetivo: Empresas medianas y grandes (50–1,000+ empleados) con datos sensibles y múltiples sucursales
+fecha_cotizacion: 2026
+moneda: USD
+tags:
+  - ciberseguridad
+  - cotizacion
+  - proyecto-final
 ---
 
 ## Catálogo de Servicios y Cotización – AEGIS Solutions
