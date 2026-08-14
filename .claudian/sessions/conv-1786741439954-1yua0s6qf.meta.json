@@ -4,8 +4,8 @@
   "title": "hola",
   "titleGenerationStatus": "failed",
   "createdAt": 1786741439961,
-  "updatedAt": 1786741593224,
-  "lastResponseAt": 1786741593224,
+  "updatedAt": 1786742832991,
+  "lastResponseAt": 1786742832991,
   "sessionId": "ses_ffde93772ffe5OAdiGuvMmTFaX",
   "selectedModel": "opencode:opencode/mimo-v2.5-free",
   "providerState": {
@@ -14,12 +14,12 @@
   "currentNote": "Proyecto Final - Empresa 1/Detalles de la Empresa/Cotizacion por nuestros servicios.md",
   "usage": {
     "cacheCreationInputTokens": 0,
-    "cacheReadInputTokens": 24576,
-    "contextTokens": 24851,
+    "cacheReadInputTokens": 83392,
+    "contextTokens": 83802,
     "contextWindow": 200000,
     "contextWindowIsAuthoritative": true,
-    "inputTokens": 275,
+    "inputTokens": 410,
     "model": "opencode:opencode/mimo-v2.5-free",
-    "percentage": 12
+    "percentage": 42
   }
 }

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proyecto Final - Empresa 1/Detalles de la Empresa/Cotizacion por nuestros servicios.md",
+                "file": "Proyecto Final - Empresa 1/Detalles de la Empresa/Descripion de equipos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cotizacion por nuestros servicios"
+              "title": "Descripion de equipos"
             }
           }
         ]
@@ -185,7 +185,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 641.5
+    "width": 870.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,13 +202,13 @@
   },
   "active": "fdb9e9e04053f267",
   "lastOpenFiles": [
+    "Proyecto Final - Empresa 1/Detalles de la Empresa/Cotizacion por nuestros servicios.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de Topologia.md",
     "Pasted image 20260814165002.png",
     "Pasted image 20260814164953.png",
     "Pasted image 20260814164942.png",
     "Pasted image 20260814164925.png",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Descripion de equipos.md",
-    "Proyecto Final - Empresa 1/Detalles de la Empresa/Cotizacion por nuestros servicios.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de empresa.md",
     "Proyecto Final - Empresa 1/Scrip Santiago/Sw-2.md",
     "Proyecto Final - Empresa 1/Scrip Santiago/SWM-1.md",
