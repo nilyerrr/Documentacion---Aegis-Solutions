@@ -46,17 +46,17 @@ tags:
 
 ### 1. Router R-SD — Core & Hub DMVPN
 
-| Campo | Detalle |
-|---|---|
-| **Tipo** | Router de núcleo (Core Router) |
-| **Modelo** | Cisco 7200 (emulado en PNETLab) |
-| **Cantidad** | 1 |
-| **Función** | Punto central de enrutamiento y **Hub DMVPN (NHRP)**. Conecta el SOC con Internet y los spokes (Santiago, La Romana, Puerto Plata). Termina los túneles cifrados y distribuye tráfico a SWM-1/SWM-2. |
-| **Interfaces** | `e0/2` → SWM-1 (10.255.255.1/30) \| `e0/1` → SWM-2 (10.255.255.5/30) \| `e0/0` → Internet/ISP (1.0.0.2/30) \| `Tunnel1` → 10.1.100.1/24 (Hub DMVPN) |
-| **OSPF** | Área 0 (Backbone/Túnel) + Área 10 (Santo Domingo) |
-| **DHCP** | 7 pools por VLAN (10-70) + exclusión de gateways HSRP + `ip helper-address` desde SWM-1/SWM-2 |
-| **Seguridad** | SSHv2 (RSA 2048), NAT Overload (PAT), ACLs `VPN-TRAFFIC` y `NAT-INTERNAS`, banner MOTD |
-| **Justificación** | Alta capacidad para múltiples protocolos. Hub central que requiere alta disponibilidad (HA), redundancia de rutas y terminación de túneles seguros para proteger los datos de los clientes. |
+| Campo             | Detalle                                                                                                                                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Tipo**          | Router de núcleo (Core Router)                                                                                                                                                                       |
+| **Modelo**        | Cisco 7200 (emulado en PNETLab)                                                                                                                                                                      |
+| **Cantidad**      | 1                                                                                                                                                                                                    |
+| **Función**       | Punto central de enrutamiento y **Hub DMVPN (NHRP)**. Conecta el SOC con Internet y los spokes (Santiago, La Romana, Puerto Plata). Termina los túneles cifrados y distribuye tráfico a SWM-1/SWM-2. |
+| **Interfaces**    | `e0/2` → SWM-1 (10.255.255.1/30) \| `e0/1` → SWM-2 (10.255.255.5/30) \| `e0/0` → Internet/ISP (1.0.0.2/30) \| `Tunnel1` → 10.1.100.1/24 (Hub DMVPN)                                                  |
+| **OSPF**          | Área 0 (Backbone/Túnel) + Área 10 (Santo Domingo)                                                                                                                                                    |
+| **DHCP**          | 7 pools por VLAN (10-70) + exclusión de gateways HSRP + `ip helper-address` desde SWM-1/SWM-2                                                                                                        |
+| **Seguridad**     | SSHv2 (RSA 2048), NAT Overload (PAT), ACLs `VPN-TRAFFIC` y `NAT-INTERNAS`, banner MOTD                                                                                                               |
+| **Justificación** | Alta capacidad para múltiples protocolos. Hub central que requiere alta disponibilidad (HA), redundancia de rutas y terminación de túneles seguros para proteger los datos de los clientes.          |
 
 > ⚠️ **Nota:** este script usa `enable secret cisco123`, mientras el resto de dispositivos usa `AEGIS-2026`. Unificar credenciales.
 

@@ -77,8 +77,8 @@ Este equipo reporta a la instancia superior de la directiva empresarial.
 
 ### A. Equipo de Configuración Básica — Estructura L2
 
-| Área | Nombre | Cargo | Responsabilidades |
-|---|---|---|---|
+| Área             | Nombre     | Cargo                                                     | Responsabilidades                                                                                                   |
+| ---------------- | ---------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | **Conf. Básica** | Franchesca | **Compliance & Procurement Manager** *(rol técnico dual)* | Configuración de VLANs y puertos de acceso, redundancia de Capa 2 (STP) y administración de los switches de acceso. |
 
 ### B. Equipo de Redes y Servicios — Conectividad L3
