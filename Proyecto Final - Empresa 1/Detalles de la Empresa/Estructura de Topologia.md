@@ -44,3 +44,4 @@ La arquitectura implementa un modelo híbrido que combina un diseño jerárquico
 - **Protección de Capa de Acceso:** BPDU Guard y PortFast habilitados en el 100% de los puertos orientados a usuarios finales.
     
 - **Banner MOTD Legal:** Todo dispositivo presenta una advertencia legal disuasoria estandarizada para el proyecto TI-203 (Falta agregar), indicando que el acceso no autorizado está prohibido y monitorizado.
+
