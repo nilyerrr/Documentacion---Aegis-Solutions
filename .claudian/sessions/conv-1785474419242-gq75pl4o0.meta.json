@@ -4,10 +4,10 @@
   "title": "analiza como tengo esta distrubucion para la creac...",
   "titleGenerationStatus": "failed",
   "createdAt": 1785474419244,
-  "updatedAt": 1786595534204,
-  "lastResponseAt": 1786595534204,
+  "updatedAt": 1786741156072,
+  "lastResponseAt": 1786741148589,
   "sessionId": "ses_0281c09e7ffefWyKG1gxHau4fR",
-  "selectedModel": "opencode:opencode/deepseek-v4-flash-free",
+  "selectedModel": "opencode:opencode/mimo-v2.5-free",
   "providerState": {
     "databasePath": "C:\\Users\\reyli\\AppData\\Roaming\\opencode\\opencode.db"
   },
@@ -19,7 +19,7 @@
     "contextWindow": 200000,
     "contextWindowIsAuthoritative": true,
     "inputTokens": 100212,
-    "model": "opencode:opencode/deepseek-v4-flash-free",
+    "model": "opencode:opencode/nemotron-3-ultra-free",
     "percentage": 50
   }
 }

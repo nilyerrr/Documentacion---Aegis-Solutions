@@ -45,3 +45,53 @@ La arquitectura implementa un modelo híbrido que combina un diseño jerárquico
     
 - **Banner MOTD Legal:** Todo dispositivo presenta una advertencia legal disuasoria estandarizada para el proyecto TI-203 (Falta agregar), indicando que el acceso no autorizado está prohibido y monitorizado.
 
+
+# Rol de cada sucursal:
+*********************************************
+
+### 1. Santo Domingo: La Sede Central (Headquarters)
+
+Esta es la columna vertebral administrativa y directiva de la empresa. Su topología es la más robusta, utilizando un modelo jerárquico clásico de tres capas (Core, Distribución con SWM-1/SWM-2, y Acceso).
+
+- **Rol Principal:** Gestión Corporativa y Operaciones de Negocio.
+    
+- **Departamentos que aloja:** Dirección General, Recursos Humanos, Cumplimiento y Auditoría, Soporte Técnico, Finanzas, Ventas y Marketing.
+    
+- **Propósito:** Aquí se toman las decisiones de negocio, se maneja la nómina, las ventas masivas y el cumplimiento legal. Es el cerebro administrativo que mantiene la empresa a flote comercialmente.
+
+![[Pasted image 20260814164925.png]]
+
+### 2. Puerto Plata: El Centro de Operaciones de Seguridad (SOC)
+
+Esta sucursal está completamente aislada de las operaciones administrativas tradicionales. Es tu fortaleza técnica y tu área de especialidad directa como CISO.
+
+- **Rol Principal:** Defensa, Investigación y Seguridad Ofensiva.
+    
+- **Departamentos que aloja:** DFIR (Digital Forensics & Incident Response), Malware Research Lab, Threat Intelligence, Red Team y el SOC (Ciberseguridad).
+    
+- **Propósito:** Es el búnker técnico de la empresa. Desde aquí, los ingenieros de ciberseguridad monitorean la red, cazan amenazas, analizan malware aislado e intentan vulnerar los propios sistemas (Red Team) para asegurar que la infraestructura de los clientes y la propia sea impenetrable.
+    
+![[Pasted image 20260814164942.png]]
+### 3. Santiago: Centro de Datos Regional y Corporativo
+
+Esta sede tiene una mezcla entre administración y alojamiento de servicios críticos. Cuenta con un servidor dedicado y un esquema de switching multicapa.
+
+- **Rol Principal:** Nodo de Servicios (Data Center) y Ventas Regionales.
+    
+- **Departamentos que aloja:** Centro de Datos, Servidores, Ventas, Corporativas y Administración.
+    
+- **Propósito:** Actúa como el motor tecnológico de la zona norte. Al tener un "Centro de Datos" y "Servidores" en su propia VLAN (199 y 110), es muy probable que funcione como el sitio principal de alojamiento de aplicaciones de la empresa o como un sitio de recuperación ante desastres (Disaster Recovery) para respaldar a Santo Domingo.
+    
+![[Pasted image 20260814164953.png]]
+### 4. La Romana: Centro de Ingeniería y Consultoría
+
+Esta sede tiene un enfoque mucho más técnico orientado al servicio al cliente y al mantenimiento de redes.
+
+- **Rol Principal:** Soporte de Infraestructura y Servicios de Consultoría TI.
+    
+- **Departamentos que aloja:** Dirección Regional, Consultoría TI e Ingeniería de Infraestructura.
+    
+- **Propósito:** Es el brazo operativo de despliegue de redes. Los ingenieros de esta sucursal (Ingeniería de Infraestructura) son los encargados de diseñar topologías, configurar OSPF/BGP, y brindar consultoría tecnológica a los clientes externos en la zona este.
+
+
+![[Pasted image 20260814165002.png]]
