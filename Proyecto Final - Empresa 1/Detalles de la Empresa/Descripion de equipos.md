@@ -35,23 +35,22 @@ tags:
 
 ### Fase 2 — Scripts Creados ⚠️ (Pendientes de integración)
 
-| # | Equipo | Sede | Rol | Modelo | Estado |
-|---|--------|------|-----|--------|--------|
-| 11 | R-SANTIAGO | Santiago | Spoke DMVPN | Cisco 7200 | ⚠️ Script creado |
-| 12 | SW-1 (Santiago) | Santiago | Distribución L3 | Catalyst 3560 | ⚠️ Script creado |
-| 13 | SW-2 (Santiago) | Santiago | Acceso L3 / Core local | Catalyst 3560 | ⚠️ Script creado |
-| 14 | SRV-* (Linux) | Santiago (VLAN 199) | RADIUS / DNS / NTP / DHCP | Ubuntu/CentOS | ⏳ Pendiente |
+| #   | Equipo          | Sede                | Rol                       | Modelo        |
+| --- | --------------- | ------------------- | ------------------------- | ------------- |
+| 11  | R-SANTIAGO      | Santiago            | Spoke DMVPN               | Cisco 7200    |
+| 12  | SW-1 (Santiago) | Santiago            | Distribución L3           | Catalyst 3560 |
+| 13  | SW-2 (Santiago) | Santiago            | Acceso L3 / Core local    | Catalyst 3560 |
+| 14  | SRV-* (Linux)   | Santiago (VLAN 199) | RADIUS / DNS / NTP / DHCP | Ubuntu/Mate   |
 
-### Fase 3 — Scripts Creados ⚠️ (Pendientes de integración)
+### Fase 3 — Scripts Creados 
 
-| # | Equipo | Sede | Rol | Modelo | Estado |
-|---|--------|------|-----|--------|--------|
-| 15 | R-PUERTO-PLATA | Puerto Plata | Spoke DMVPN | Cisco 7200 | ⚠️ Script creado |
-| 16 | SW-5 | Puerto Plata | Distribución L3 | Catalyst 3560 | ⚠️ Script creado |
-| 17 | sw-30 | Puerto Plata | Acceso L2 (DFIR, Malware) | Catalyst 2960 | ⚠️ Script creado |
-| 18 | sw-31 | Puerto Plata | Acceso L2 (TH, Red Team, SOC) | Catalyst 2960 | ⚠️ Script creado |
+| #   | Equipo         | Sede         | Rol                           | Modelo        |
+| --- | -------------- | ------------ | ----------------------------- | ------------- |
+| 15  | R-PUERTO-PLATA | Puerto Plata | Spoke DMVPN                   | Cisco 7200    |
+| 16  | SW-5           | Puerto Plata | Distribución L3               | Catalyst 3560 |
+| 17  | sw-30          | Puerto Plata | Acceso L2 (DFIR, Malware)     | Catalyst 2960 |
+| 18  | sw-31          | Puerto Plata | Acceso L2 (TH, Red Team, SOC) | Catalyst 2960 |
 
-> **Leyenda:** ✅ = Implementado y funcionando. ⚠️ = Script creado, pendiente de integración/prueba completa. ⏳ = Pendiente de crear.
 
 ---
 
@@ -136,19 +135,20 @@ tags:
 
 ### 5. Router R-SANTIAGO
 
-| Campo | Detalle |
-|---|---|
-| **Tipo / Modelo** | Router de sucursal (Branch Router) / Cisco 7200 (emulado) |
-| **Cantidad** | 1 |
-| **Función** | Punto de salida WAN para Santiago. Conecta con Internet y alimenta al core local. Gestiona NAT, NTP y el túnel Spoke DMVPN. |
-| **Interfaces** | `e0/0` → ISP (1.0.0.6/30) \| `e0/1.99` → SW-1 (10.0.19.1/30, VLAN 99 tránsito) \| `Tunnel1` → 10.1.100.2/24 (Spoke DMVPN) |
-| **OSPF** | Área 20 (Santiago) + Área 0 (Túnel DMVPN) |
-| **DHCP** | Relay hacia servidor Linux en VLAN 199 |
-| **Seguridad** | SSHv2, NAT Overload, ACLs `VPN-TRAFFIC` / `NAT-INTERNAS`, banner MOTD |
-| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
-| **IPsec Key** | `AEGIS-2026-VPN` |
-| **NHRP Auth** | `AEGIS` |
-| **Estado** | ⚠️ Script creado. Pendiente de integración con switches y servidores. |
+| Campo             | Detalle                                                                                                                     |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **Tipo / Modelo** | Router de sucursal (Branch Router) / Cisco 7200 (emulado)                                                                   |
+| **Cantidad**      | 1                                                                                                                           |
+| **Función**       | Punto de salida WAN para Santiago. Conecta con Internet y alimenta al core local. Gestiona NAT, NTP y el túnel Spoke DMVPN. |
+| **Interfaces**    | `e0/0` → ISP (1.0.0.6/30) \| `e0/1.99` → SW-1 (10.0.19.1/30, VLAN 99 tránsito) \| `Tunnel1` → 10.1.100.2/24 (Spoke DMVPN)   |
+| **OSPF**          | Área 20 (Santiago) + Área 0 (Túnel DMVPN)                                                                                   |
+| **DHCP**          | Relay hacia servidor Linux en VLAN 199                                                                                      |
+| **Seguridad**     | SSHv2, NAT Overload, ACLs `VPN-TRAFFIC` / `NAT-INTERNAS`, banner MOTD                                                       |
+| **Credenciales**  | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026`                                                |
+| **IPsec Key**     | `AEGIS-2026-VPN`                                                                                                            |
+| **NHRP Auth**     | `AEGIS`                                                                                                                     |
+| **Estado**        | ⚠️ Script creado. Pendiente de integración con switches y servidores.                                                       |
+|                   |                                                                                                                             |
 
 ### 6. Switch SW-1 (Santiago) — Distribución L3
 
@@ -178,12 +178,12 @@ tags:
 
 ### 8. Servidores Linux (Pendientes)
 
-| Campo | Detalle |
-|---|---|
-| **Plataforma** | Ubuntu Server / CentOS (emulado en PNETLab) |
-| **Ubicación** | Santiago — VLAN 199 Servidores (10.0.10.0/23) |
-| **Servicios** | RADIUS, DNS interno (`aegis.com.do`, 10.0.10.10), NTP, DHCP, FTP, Zabbix/Wazuh |
-| **Estado** | ⏳ Pendiente de crear scripts |
+| Campo          | Detalle                                                            |
+| -------------- | ------------------------------------------------------------------ |
+| **Plataforma** | Ubuntu Server / CentOS (emulado en PNETLab)                        |
+| **Ubicación**  | Santiago — VLAN 199 Servidores (10.0.10.0/23)                      |
+| **Servicios**  | RADIUS, DNS interno (`aegis.com.do`, 10.0.10.10), NTP, DHCP, FTP,  |
+| **Estado**     | ⏳ Pendiente de crear scripts                                       |
 
 ---
 

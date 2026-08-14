@@ -64,14 +64,13 @@ tags:
 
 ## 🎖️ Nivel 1 — Directiva (Gobierno Corporativo)
 
-| Cargo | Integrante | Responsabilidad |
-|---|---|---|
-| **CEO & CISO** | [[Roles y cargos de los integrantes.md\|Reylin Santana]] | Visión estratégica, arquitectura de seguridad, protocolos defensivos, monitoreo del SOC. |
-| **CTO & Arquitecto de Red** | [[Roles y cargos de los integrantes.md\|Neury]] | Diseño de infraestructura, topologías, enrutamiento y conectividad WAN. |
-| **CFO** *(Finanzas)* | — | Control financiero, presupuestos y facturación de servicios. |
-| **CHRO** *(RRHH)* | — | Gestión del talento, contrataciones y clima laboral. |
+| Cargo                       | Integrante                                               | Responsabilidad                                                                          |
+| --------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| **CEO & CISO**              | [[Roles y cargos de los integrantes.md\|Reylin Santana]] | Visión estratégica, arquitectura de seguridad, protocolos defensivos, monitoreo del SOC. |
+| **CTO & Arquitecto de Red** | [[Roles y cargos de los integrantes.md\|Neury]]          | Diseño de infraestructura, topologías, enrutamiento y conectividad WAN.                  |
+| **CFO** *(Finanzas)*        | Franchesca                                               | Control financiero, presupuestos y facturación de servicios.                             |
+| **CHRO** *(RRHH)*           | Franchesca                                               | Gestión del talento, contrataciones y clima laboral.                                     |
 
-> La directiva delega en las líneas de servicio (Pilares A/B/C) y en los departamentos de apoyo.
 
 ---
 
@@ -81,13 +80,32 @@ tags:
 
 > *"El corazón de Aegis. Para empresas que necesitan que alguien vigile su red mientras ellos duermen."*
 
-| Departamento | Función | Sede |
-|---|---|---|
-| **Operaciones SOC (Tier 1 y 2)** | Monitoreo de alertas, revisión de logs, respuesta rápida ante incidentes. | Santo Domingo + Puerto Plata |
-| **DFIR** *(Digital Forensics & Incident Response)* | Investigación forense y respuesta a incidentes. | Puerto Plata |
-| **Cumplimiento y Auditoría** | Alineación con estándares internacionales y regulaciones locales (INDOTEL). | Santo Domingo |
+| Departamento                                       | Función                                                                     | Sede                         |
+| -------------------------------------------------- | --------------------------------------------------------------------------- | ---------------------------- |
+| **Operaciones SOC (Tier 1 y 2)**                   | Monitoreo de alertas, revisión de logs, respuesta rápida ante incidentes.   | Santo Domingo + Puerto Plata |
+| **DFIR** *(Digital Forensics & Incident Response)* | Investigación forense y respuesta a incidentes.                             | Puerto Plata                 |
+| **Cumplimiento y Auditoría**                       | Alineación con estándares internacionales y regulaciones locales (INDOTEL). | Santo Domingo                |
+## AEGIS CSIRT
 
+## Misión
+
+El Centro de Operaciones de Seguridad – Equipo de Inteligencia de Amenazas y Respuesta a Incidentes de Seguridad Cibernética (AEGIS– CSIRT) ofrece servicios especializados para proteger la infraestructura y los procesos de seguridad, con el objetivo de prevenir incidentes cibernéticos y mitigar su impacto. A través de programas de concientización, información actualizada sobre amenazas y medidas preventivas avanzadas, nuestro SOC garantiza una respuesta rápida y efectiva a riesgos potenciales. Nos centramos en el seguimiento continuo, la gestión de incidentes y la protección de activos críticos en un entorno digital en constante evolución.
 **Servicios ofrecidos:** Monitoreo 24/7 (NOC/SOC) · Respuesta a Incidentes (Blue Team) · Gestión de Riesgos y Cumplimiento.
+
+
+## Visión
+
+Nuestra visión es establecer el SOC de Aegis Solutions como líder en monitoreo de seguridad y atención de incidentes, pues aspiramos a mejorar continuamente nuestras capacidades mediante tecnologías innovadoras y estrategias robustas, garantizando un entorno digital seguro para nuestros clientes.
+
+## Valores
+
+- Compromiso con el cliente
+- Innovación
+- Excelencia
+- Integridad
+- Adaptabilidad
+- Colaboración
+- Equidad e inclusión
 
 ### Pilar B: Auditoría Técnica y Seguridad Ofensiva
 
@@ -160,23 +178,18 @@ tags:
 
 ## 🔗 Matriz de Integración: Pilar ↔ Departamento ↔ Integrante
 
-| Pilar | Departamento | Integrante(s) | Rol en el proyecto |
-|---|---|---|---|
-| A — SOC y Defensa | Operaciones SOC, Cumplimiento | Reylin Santana | CISO / Seguridad |
-| A — SOC y Defensa | DFIR, Threat Intelligence (lab) | *(Por asignar)* | — |
-| B — Ofensiva | Red Team, Malware Research | Reylin Santana *(dual)* | Pentesting / DMVPN / ACLs |
-| C — Ingeniería | Consultoría TI, Ing. Infraestructura | Neury | OSPF, NAT, HSRP |
-| C — Ingeniería | Servidores, Desarrollo Web | Starlin | Servidores Web/Correo/FTP/DNS/RADIUS |
-| Apoyo — Técnico | DevOps, Control de Versiones, VLSM | Randy | GitHub, CI/CD, VLSM |
-| Apoyo — Corporativo | Legal, Adquisiciones, Conf. L2 | Franchesca | Cumplimiento + VLANs/switches |
-| Apoyo — Técnico | Documentación, Entregables | Darling | Diagramas, manuales, bitácoras |
+| Pilar               | Departamento                         | Integrante(s)           | Rol en el proyecto                   |
+| ------------------- | ------------------------------------ | ----------------------- | ------------------------------------ |
+| A — SOC y Defensa   | Operaciones SOC, Cumplimiento        | Reylin Santana          | CISO / Seguridad                     |
+| A — SOC y Defensa   | DFIR, Threat Intelligence (lab)      | Reylin Santana          | CISO / Seguridad                     |
+| B — Ofensiva        | Red Team, Malware Research           | Reylin Santana *(dual)* | Pentesting / DMVPN / ACLs            |
+| C — Ingeniería      | Consultoría TI, Ing. Infraestructura | Neury                   | OSPF, NAT, HSRP                      |
+| C — Ingeniería      | Servidores, Desarrollo Web           | Starlin                 | Servidores Web/Correo/FTP/DNS/RADIUS |
+| Apoyo — Técnico     | DevOps, Control de Versiones, VLSM   | Randy                   | GitHub, CI/CD, VLSM                  |
+| Apoyo — Corporativo | Legal, Adquisiciones, Conf. L2       | Franchesca              | Cumplimiento + VLANs/switches        |
+| Apoyo — Técnico     | Documentación, Entregables           | Darling                 | Diagramas, manuales, bitácoras       |
 
 > Detalle de cargos en [[Roles y cargos de los integrantes.md]] y de equipos en [[Descripion de equipos.md]].
 
 ---
 
-## ⚠️ Observaciones para completar
-
-1. **CFO y CHRO** están definidos como cargos pero **sin integrante asignado** — si el proyecto requiere 6 integrantes únicamente, considerar roles duales o dejarlos como "vacantes" de la empresa ficticia.
-2. **Departamentos del lab (DFIR, Malware, Threat Intel)** no tienen integrante asignado; pueden cubrirse con roles duales de Reylin/Neury o definirse como parte del organigrama de la empresa sin asignación académica.
-3. La matriz de integración es una **propuesta de trazabilidad**; ajustar según el reparto real del equipo.

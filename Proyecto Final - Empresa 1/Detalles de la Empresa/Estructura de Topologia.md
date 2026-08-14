@@ -61,7 +61,7 @@ La arquitectura implementa un modelo híbrido que combina un diseño jerárquico
 
 ### 1. Santo Domingo: La Sede Central (Headquarters)
 
-Esta es la columna vertebral administrativa y directiva de la empresa. Su topología es la más robusta, utilizando un modelo jerárquico clásico de tres capas (Core, Distribución con SWM-1/SWM-2, y Acceso).
+Esta es la columna vertebral administrativa y directiva de la empresa. Es la topología es la más robusta, utilizando un modelo jerárquico clásico de tres capas (Core, Distribución con SWM-1/SWM-2, y Acceso).
 
 - **Rol Principal:** Gestión Corporativa y Operaciones de Negocio.
     
