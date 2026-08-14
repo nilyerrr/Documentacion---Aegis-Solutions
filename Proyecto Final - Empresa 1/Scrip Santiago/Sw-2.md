@@ -91,11 +91,11 @@ router ospf 1
  router-id 3.3.3.3
  passive-interface default
  no passive-interface Vlan99
- network 10.0.10.0 0.0.1.255 area 30
- network 10.0.12.0 0.0.0.255 area 30
- network 10.0.14.0 0.0.0.255 area 30
- network 10.0.17.32 0.0.0.15 area 30
- network 10.0.19.0 0.0.0.3 area 30
+ network 10.0.10.0 0.0.1.255 area 20
+ network 10.0.12.0 0.0.0.255 area 20
+ network 10.0.14.0 0.0.0.255 area 20
+ network 10.0.17.32 0.0.0.15 area 20
+ network 10.0.19.0 0.0.0.3 area 20
 
 enable secret AEGIS-2026
 username admin privilege 15 secret AEGIS-2026
