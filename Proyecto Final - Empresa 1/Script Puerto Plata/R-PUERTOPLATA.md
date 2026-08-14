@@ -137,7 +137,7 @@ interface Ethernet0/1.350
 ip route 0.0.0.0 0.0.0.0 1.0.0.13
 
 router ospf 1
- router-id 9.9.9.9.9
+ router-id 5.5.5.5
  passive-interface default
  no passive-interface Ethernet0/1.310
  no passive-interface Ethernet0/1.320
@@ -145,11 +145,11 @@ router ospf 1
  no passive-interface Ethernet0/1.340
  no passive-interface Ethernet0/1.350
  no passive-interface Tunnel1
- network 10.0.0.0 0.0.1.255 area 20
- network 10.0.2.0 0.0.1.255 area 20
- network 10.0.4.0 0.0.1.255 area 20
- network 10.0.6.0 0.0.1.255 area 20
- network 10.0.17.64 0.0.0.15 area 20
+ network 10.0.0.0 0.0.1.255 area 40
+ network 10.0.2.0 0.0.1.255 area 40
+ network 10.0.4.0 0.0.1.255 area 40
+ network 10.0.6.0 0.0.1.255 area 40
+ network 10.0.17.64 0.0.0.15 area 40
  network 10.1.100.0 0.0.0.255 area 0
  default-information originate
 

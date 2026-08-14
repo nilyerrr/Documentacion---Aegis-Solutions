@@ -94,6 +94,7 @@ interface Tunnel1
  ip nhrp map multicast dynamic
  ip nhrp authentication AEGIS
  ip ospf network point-to-multipoint
+ tunnel protection ipsec profile AEGIS-PROFILE
  no shutdown
 
 ! --- 6. Configuración de Interfaces Físicas ---

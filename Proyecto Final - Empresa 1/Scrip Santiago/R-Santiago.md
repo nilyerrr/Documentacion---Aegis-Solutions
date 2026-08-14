@@ -69,7 +69,7 @@ interface Ethernet0/1.99
  encapsulation dot1Q 99
  ip address 10.0.19.1 255.255.255.252
  ip nat inside
- ip ospf 1 area 30
+ ip ospf 1 area 20
  no shutdown
 
 ! --- Enrutamiento estático + OSPF (area 20) ---

@@ -1,6 +1,6 @@
 # Medidas de Seguridad para los Equipos de Red (Aegis Solutions)
 
-Este documento presenta el análisis técnico exhaustivo de los protocolos de seguridad implementados en la infraestructura multi-sucursal (**Santo Domingo, Santiago, La Romana y Puerto Plata**), junto con el conjunto de recomendaciones de endurecimiento (*hardening*) y los scripts de configuración listos para producción para cada equipo.
+Este documento presenta el análisis técnico exhaustivo de los protocolos de seguridad implementados en la infraestructura multi-sucursal (**Santo Domingo, Santiago, La Romana y Puerto Plata**), junto con el conjunto de recomendaciones de endurecimiento (*hardening*), la solución al diagnóstico de conectividad VPN/DHCP y los scripts de configuración listos para producción para cada equipo.
 
 ---
 
@@ -13,25 +13,32 @@ A continuación se resume la evaluación de los scripts existentes frente a los 
 | **1. Control de Acceso** | **Parcial**: SSH v2, contraseñas encriptadas, banners y timeouts VTY activos. *Falta ACL de administración en VTY y apagado de puertos desocupados en VLAN Blackhole.* | **Deficiente en Switches**: `SW-1` y `SW-2` carecen de encriptación de claves, banners y timeouts. VTY sin ACL de restricción de IP de gestión. | **Parcial**: SSH v2 y contraseñas seguras activas. *Falta ACL de administración VTY y aislamiento de puertos no usados.* | **Deficiente en Switches**: `SW-5`, `sw-30` y `sw-31` carecen de encriptación de clave, banners, timeouts VTY y SSH RSA explícito en el script. VTY sin ACL. |
 | **2. Seguridad de Puertos** | **Bueno en Acceso**: `SW-10`, `SW-11` y `SW-12` tienen `port-security` con MAC sticky (máx. 2 MACs) y violación `restrict`. *Falta `errdisable recovery`.* | **Crítico (Ausente)**: `SW-2` tiene puertos de servidor y PCs **sin Port Security**. Vulnerable a MAC Flooding y suplantación de MAC. | **Bueno en Acceso**: `SW-9` incluye `port-security` sticky en puertos finales. *Falta `errdisable recovery` y modo `shutdown`.* | **Crítico (Ausente)**: `sw-30` y `sw-31` no tienen Port Security en accesos (DFIR, Malware, Red Team, SOC, TH). Vulnerables a MAC Flooding. |
 | **3. Ataques de VLAN** | **Aceptable**: Usa VLAN 99 como nativa y `switchport nonegotiate`. *VLAN 99 está en uso en lugar de ser una VLAN nativa muerta (ej. VLAN 999).* | **Crítico (Ausente en Switches)**: `SW-1` y `SW-2` no tienen VLAN nativa explícita en troncales (usan VLAN 1) ni `switchport nonegotiate`. Vulnerables a VLAN Hopping. | **Aceptable**: VLAN 99 nativa en troncales y DTP desactivado con `switchport nonegotiate`. *Falta tagging global de VLAN nativa.* | **Crítico (Ausente)**: `SW-5`, `sw-30` y `sw-31` usan VLAN 1 por defecto en troncales y no ejecutan `switchport nonegotiate`. Vulnerables a DTP Spoofing. |
-| **4. Ataques de DHCP** | **Inactivo**: Desactivado por compatibilidad en laboratorio. Vulnerable a Rogue DHCP y Starvation en entornos reales. | **Ausente**: Sin DHCP Snooping ni IP Source Guard en `SW-2` (donde reside el servidor DHCP Linux). | **Ausente**: Sin protección de DHCP Snooping ni Rate Limiting contra ataques por DHCP Starvation. | **Ausente (Retirado)**: Retirado por falla en asignación de IP. *Se incluye diagnóstico y solución técnica del bug de Option 82 abajo.* |
+| **4. Ataques de DHCP** | **Inactivo**: Desactivado por compatibilidad en laboratorio. Vulnerable a Rogue DHCP y Starvation en entornos reales. | **Ausente**: Sin DHCP Snooping ni IP Source Guard en `SW-2` (donde reside el servidor DHCP Linux). | **Ausente**: Sin protección de DHCP Snooping ni Rate Limiting contra ataques por DHCP Starvation. | **Ausente**: Retirado por falla en asignación de IP. *Se incluye diagnóstico y solución técnica del bug de Option 82 abajo.* |
 | **5. Ataques de ARP** | **Inactivo**: Scripts de acceso incluyen `no ip arp inspection vlan`. Vulnerable a ARP Poisoning y MITM. | **Ausente**: No existe inspección dinámica de ARP (DAI) en los switches de la sucursal. | **Ausente**: Sin configuración de Dynamic ARP Inspection (DAI) en `SW-3` ni `SW-9`. | **Ausente**: Sin Dynamic ARP Inspection (DAI) en `SW-5`, `sw-30` ni `sw-31`. Vulnerables a ARP Spoofing/Poisoning. |
 | **6. Ataques de STP** | **Bueno en Acceso**: `spanning-tree portfast edge` y `bpduguard enable` en accesos. Prioridades Root configuradas. *Falta Root Guard en uplinks.* | **Crítico**: `SW-1` y `SW-2` no definen modo Rapid-PVST ni prioridades. Accesos en `SW-2` **no tienen PortFast ni BPDU Guard**. | **Bueno**: Rapid-PVST y prioridades en `SW-3`. BPDU Guard y PortFast en `SW-9`. *Falta Root Guard hacia el Router.* | **Crítico**: `SW-5`, `sw-30` y `sw-31` no especifican Rapid-PVST, prioridades, ni PortFast / BPDU Guard en accesos. Vulnerables a ataques de BPDU. |
 
 ---
 
-## 2. Justificación Técnica de las Medidas y Diagnóstico de DHCP Snooping
+## 2. Diagnósticos Técnicos de Conectividad y Soluciones de Red
 
-### 2.1. Diagnóstico Técnico: ¿Por qué falló el DHCP cuando se activó DHCP Snooping?
+### 2.1. Diagnóstico de la Caída de Ping en Santiago y Puerto Plata (DMVPN / IPsec Mismatch)
+**Causa Raíz Identificada**:
+1. **Falta de Protección IPsec en el HUB (Santo Domingo)**: Los routers `R-Santiago` y `R-PUERTOPLATA` tenían configurada la protección IPsec en su interfaz del túnel (`tunnel protection ipsec profile AEGIS-PROFILE`). Sin embargo, el Router HUB de Santo Domingo (`R-SD`) y `R-Romana` **no tenían aplicada** la directiva `tunnel protection ipsec profile AEGIS-PROFILE` en la interfaz `Tunnel1`.
+   * **Consecuencia**: Cuando Santiago y Puerto Plata intentaban negociar la fase ISAKMP/IPsec con Santo Domingo, el HUB descartaba la negociación. Por ello, Santo Domingo y La Romana sí se comunicaban (ambos en GRE plano), mientras que Santiago y Puerto Plata quedaban aislados sin túnel VPN funcional.
+2. **Error de Sintaxis en OSPF Puerto Plata**: En `R-PUERTOPLATA`, la línea `router-id 9.9.9.9.9` contenía 5 octetos (inválido en Cisco IOS), provocando que el proceso OSPF fallara por sintaxis. Se corrigió a `router-id 5.5.5.5`.
+3. **Desalineación de Áreas OSPF**: Se alineó el área de las interfaces de acceso y subinterfaces en Santiago (`area 20`) y Puerto Plata (`area 40`).
+
+---
+
+### 2.2. Diagnóstico Técnico: ¿Por qué fallaba el DHCP con Snooping y cómo resolverlo?
 Cuando se habilita **DHCP Snooping** en switches Cisco IOS, el switch automáticamente inserta la **Opción 82 (Relay Information Option)** en las solicitudes DHCP con la dirección `giaddr = 0.0.0.0`. Por defecto, los Routers Cisco y Servidores DHCP descartan las solicitudes DHCP que contienen la Opción 82 si provienen de un switch con `giaddr = 0.0.0.0` o si la interfaz del switch no se ha marcado como confiable (*trusted*).
 
-**Consecuencia**: Las PCs no reciben dirección IP y se quedan en APIPA (`169.254.x.x`).
-
 **Solución Técnica Correcta para Reactivar DHCP Snooping Sin Bloquear IPs**:
-1. En **todos los switches de acceso**, deshabilitar la inserción automática de la opción 82 con el comando:
+1. En **todos los switches de acceso**, deshabilitar la inserción automática de la opción 82:
    ```cisco
    no ip dhcp snooping information option
    ```
-2. En el **Router DHCP / Relay**, permitir solicitudes con opción 82 no confiable con:
+2. En el **Router DHCP / Relay**, permitir solicitudes con opción 82 no confiable:
    ```cisco
    ip dhcp relay information trust-all
    ```
@@ -44,37 +51,6 @@ Cuando se habilita **DHCP Snooping** en switches Cisco IOS, el switch automátic
 
 ---
 
-### 2.2. Justificación de los 6 Ejes de Seguridad
-
-#### Control de Acceso
-- **Filtro de IPs de Gestión en VTY (`access-class`)**: Limita el acceso por SSH a los equipos únicamente desde las subredes autorizadas de Soporte Técnico y Administración. Evita ataques de fuerza bruta o escaneo SSH.
-- **Aislamiento de Puertos No Utilizados (VLAN 999 - UNUSED_BLACKHOLE + `shutdown`)**: Mueve puertos físicos desocupados a una VLAN "agujero negro" sin interfaz SVI ni ruteo y los apaga, eliminando vectores de acceso físico en tomas de pared.
-
-#### Seguridad de Puertos (Port Security)
-- **`switchport port-security` con MAC Sticky**: Asocia dinámicamente la dirección MAC autorizada al puerto. Si se conecta un dispositivo desconocido o un switch no autorizado, se bloquea el tráfico.
-- **Recuperación Automática (`errdisable recovery cause psecure-violation`)**: Restablece automáticamente los puertos bloqueados tras 300 segundos, reduciendo la carga operativa del equipo de soporte.
-
-#### Protección contra Ataques de VLAN (VLAN Hopping & Double Tagging)
-- **VLAN Nativa Muerta (VLAN 999 - UNUSED_NATIVE)**: Invalida los ataques de *Double Tagging* al usar una VLAN desprovista de usuarios e interfaces de ruteo como nativa en los enlaces troncales.
-- **Desactivación de DTP (`switchport nonegotiate`)**: Evita que un atacante emule tramas DTP para convertir un puerto de acceso en troncal (*DTP Spoofing*).
-- **Etiquetado Obligatorio (`vlan dot1q tag native`)**: Fuerza el etiquetado 802.1Q en todas las tramas de la VLAN nativa.
-
-#### Protección contra Ataques de DHCP (DHCP Snooping & IP Source Guard)
-- **DHCP Snooping (`ip dhcp snooping`)**: Bloquea servidores DHCP falsos (*Rogue DHCP*) que intentan realizar Man-in-the-Middle modificando la puerta de enlace y DNS de los clientes.
-- **Limitación de Tasa (`ip dhcp snooping limit rate 15`)**: Previene el agotamiento del pool de IPs por ataques de **DHCP Starvation**.
-- **IP Source Guard (`ip verify source`)**: Valida que la IP de origen del cliente coincida con la asignación en la tabla de DHCP Snooping, evitando el **IP Spoofing**.
-
-#### Protección contra Ataques de ARP (Dynamic ARP Inspection - DAI)
-- **Dynamic ARP Inspection (`ip arp inspection vlan ...`)**: Intercepta y valida todas las respuestas y solicitudes ARP contra la base de datos de DHCP Snooping, bloqueando el envenenamiento ARP (*ARP Poisoning*) y Man-in-the-Middle (MITM).
-
-#### Protección contra Ataques de STP (Spanning Tree Security)
-- **PortFast Edge (`spanning-tree portfast edge`)**: Pasa puertos de acceso inmediatamente a estado de reenvío (*Forwarding*).
-- **BPDU Guard (`spanning-tree bpduguard enable`)**: Coloca en `err-disabled` cualquier puerto de acceso que reciba tramas BPDU (evitando switches piratas).
-- **Root Guard (`spanning-tree guard root`)**: Previene que switches secundarios u hostiles asuman el rol de Root Bridge.
-- **Loop Guard (`spanning-tree loopguard default`)**: Evita bucles causados por fallas unidireccionales de enlace.
-
----
-
 ## 3. Scripts de Configuración de Seguridad por Sucursal y Equipo
 
 ---
@@ -84,11 +60,12 @@ Cuando se habilita **DHCP Snooping** en switches Cisco IOS, el switch automátic
 #### 1. Router Principal `R-SD`
 ```cisco
 ! ============================================================
-! ENDURECIMIENTO DE SEGURIDAD - R-SD (SANTO DOMINGO)
+! ENDURECIMIENTO DE SEGURIDAD Y DMVPN IPSEC - R-SD (SANTO DOMINGO)
 ! ============================================================
 enable
 configure terminal
 
+! --- 1. Control de Acceso: ACL de Gestión para VTY ---
 ip access-list standard ACL-ADMIN-VTY
  remark Permitir solo subredes de Soporte Técnico y Administración
  permit 10.0.17.0 0.0.0.31
@@ -104,6 +81,34 @@ line vty 0 4
 line con 0
  exec-timeout 5 0
  logging synchronous
+
+! --- 2. Aseguramiento de DMVPN con IPsec ---
+crypto isakmp policy 10
+ encr aes 256
+ hash sha256
+ authentication pre-share
+ group 14
+ lifetime 3600
+crypto isakmp key AEGIS-2026-VPN address 0.0.0.0 0.0.0.0
+
+crypto ipsec transform-set AEGIS-TS esp-aes 256 esp-sha256-hmac
+ mode transport
+
+crypto ipsec profile AEGIS-PROFILE
+ set transform-set AEGIS-TS
+
+interface Tunnel1
+ description TUNNEL HUB SANTO DOMINGO
+ ip address 10.1.100.1 255.255.250
+ ip mtu 1400
+ tunnel source Ethernet0/0
+ tunnel mode gre multipoint
+ ip nhrp network-id 2026
+ ip nhrp map multicast dynamic
+ ip nhrp authentication AEGIS
+ ip ospf network point-to-multipoint
+ tunnel protection ipsec profile AEGIS-PROFILE
+ no shutdown
 
 no ip http server
 no ip http secure-server
@@ -141,7 +146,6 @@ interface range Ethernet1/0 - 2
  switchport nonegotiate
  spanning-tree guard root
 
-! Configuración Correcta de DHCP Snooping y DAI
 ip dhcp snooping
 ip dhcp snooping vlan 10,20,30,40,50,60,70
 no ip dhcp snooping information option
@@ -263,7 +267,6 @@ no ip dhcp snooping information option
 ip arp inspection vlan 10,20,30,40,50,60,70
 ip arp inspection validate src-mac dst-mac ip
 
-! Aplicar en Interfaces de Acceso Activas (e0/2, e0/3, e1/0 según corresponda):
 interface range Ethernet0/2 - 3
  switchport mode access
  switchport nonegotiate
@@ -276,7 +279,6 @@ interface range Ethernet0/2 - 3
  spanning-tree portfast edge
  spanning-tree bpduguard enable
 
-! Aislamiento de Puertos Libres
 interface range Ethernet1/1 - 3, Ethernet2/0 - 3, Ethernet3/0 - 3
  switchport mode access
  switchport access vlan 999
@@ -301,10 +303,55 @@ write memory
 #### 1. Router Spoke `R-Santiago`
 ```cisco
 ! ============================================================
-! ENDURECIMIENTO DE SEGURIDAD - R-SANTIAGO
+! ENDURECIMIENTO DE SEGURIDAD Y DMVPN IPSEC - R-SANTIAGO
 ! ============================================================
 enable
 configure terminal
+
+crypto isakmp policy 10
+ encr aes 256
+ hash sha256
+ authentication pre-share
+ group 14
+ lifetime 3600
+crypto isakmp key AEGIS-2026-VPN address 0.0.0.0 0.0.0.0
+
+crypto ipsec transform-set AEGIS-TS esp-aes 256 esp-sha256-hmac
+ mode transport
+
+crypto ipsec profile AEGIS-PROFILE
+ set transform-set AEGIS-TS
+
+interface Tunnel1
+ description TUNNEL SPOKE SANTIAGO
+ ip address 10.1.100.2 255.255.255.0
+ ip mtu 1400
+ tunnel source Ethernet0/0
+ tunnel mode gre multipoint
+ ip nhrp network-id 2026
+ ip nhrp map 10.1.100.1 1.0.0.2
+ ip nhrp map multicast 1.0.0.2
+ ip nhrp nhs 10.1.100.1
+ ip nhrp authentication AEGIS
+ ip ospf network point-to-multipoint
+ tunnel protection ipsec profile AEGIS-PROFILE
+ no shutdown
+
+interface Ethernet0/1.99
+ ip ospf 1 area 20
+
+router ospf 1
+ router-id 2.2.2.2
+ passive-interface default
+ no passive-interface Ethernet0/1.99
+ no passive-interface Tunnel1
+ network 10.0.10.0 0.0.1.255 area 20
+ network 10.0.12.0 0.0.0.255 area 20
+ network 10.0.14.0 0.0.0.255 area 20
+ network 10.0.17.32 0.0.0.15 area 20
+ network 10.0.19.0 0.0.0.3 area 20
+ network 10.1.100.0 0.0.0.255 area 0
+ default-information originate
 
 ip access-list standard ACL-ADMIN-VTY
  permit 10.0.12.0 0.0.0.255
@@ -438,7 +485,6 @@ ip dhcp snooping
 ip dhcp snooping vlan 110,130,140,199
 no ip dhcp snooping information option
 
-! Puerto del Servidor Linux (e0/2) -> Confiable para DHCP
 interface Ethernet0/2
  description Server Linux (DHCP-DNS-NFS-RADIUS-FTP)
  switchport mode access
@@ -456,7 +502,6 @@ interface Ethernet0/2
 ip arp inspection vlan 110,130,140,199
 ip arp inspection validate src-mac dst-mac ip
 
-! Hardening de Puertos de Acceso (PCs)
 interface range Ethernet0/3, Ethernet1/0 - 1, Ethernet1/3
  switchport mode access
  switchport nonegotiate
@@ -507,10 +552,39 @@ write memory
 #### 1. Router Spoke `R-Romana`
 ```cisco
 ! ============================================================
-! ENDURECIMIENTO DE SEGURIDAD - R-ROMANA
+! ENDURECIMIENTO DE SEGURIDAD Y DMVPN IPSEC - R-ROMANA
 ! ============================================================
 enable
 configure terminal
+
+crypto isakmp policy 10
+ encr aes 256
+ hash sha256
+ authentication pre-share
+ group 14
+ lifetime 3600
+crypto isakmp key AEGIS-2026-VPN address 0.0.0.0 0.0.0.0
+
+crypto ipsec transform-set AEGIS-TS esp-aes 256 esp-sha256-hmac
+ mode transport
+
+crypto ipsec profile AEGIS-PROFILE
+ set transform-set AEGIS-TS
+
+interface Tunnel1
+ description TUNNEL SPOKE LA ROMANA
+ ip address 10.1.100.3 255.255.255.0
+ ip mtu 1400
+ tunnel source Ethernet0/0
+ tunnel mode gre multipoint
+ ip nhrp network-id 2026
+ ip nhrp map 10.1.100.1 1.0.0.2
+ ip nhrp map multicast 1.0.0.2
+ ip nhrp nhs 10.1.100.1
+ ip nhrp authentication AEGIS
+ ip ospf network point-to-multipoint
+ tunnel protection ipsec profile AEGIS-PROFILE
+ no shutdown
 
 ip access-list standard ACL-ADMIN-VTY
  permit 10.0.15.128 0.0.0.127
@@ -658,16 +732,60 @@ write memory
 #### 1. Router Spoke `R-PUERTOPLATA`
 ```cisco
 ! ============================================================
-! ENDURECIMIENTO DE SEGURIDAD - R-PUERTOPLATA
+! ENDURECIMIENTO DE SEGURIDAD Y DMVPN IPSEC - R-PUERTOPLATA
 ! ============================================================
 enable
 configure terminal
 
-! --- Control de Acceso: ACL de Gestión VTY ---
+crypto isakmp policy 10
+ encr aes 256
+ hash sha256
+ authentication pre-share
+ group 14
+ lifetime 3600
+crypto isakmp key AEGIS-2026-VPN address 0.0.0.0 0.0.0.0
+
+crypto ipsec transform-set AEGIS-TS esp-aes 256 esp-sha256-hmac
+ mode transport
+
+crypto ipsec profile AEGIS-PROFILE
+ set transform-set AEGIS-TS
+
+interface Tunnel1
+ description TUNNEL SPOKE PUERTO PLATA
+ ip address 10.1.100.4 255.255.255.0
+ ip mtu 1400
+ tunnel source Ethernet0/0
+ tunnel mode gre multipoint
+ ip nhrp network-id 2026
+ ip nhrp map 10.1.100.1 1.0.0.2
+ ip nhrp map multicast 1.0.0.2
+ ip nhrp nhs 10.1.100.1
+ ip nhrp authentication AEGIS
+ ip ospf network point-to-multipoint
+ tunnel protection ipsec profile AEGIS-PROFILE
+ no shutdown
+
+router ospf 1
+ router-id 5.5.5.5
+ passive-interface default
+ no passive-interface Ethernet0/1.310
+ no passive-interface Ethernet0/1.320
+ no passive-interface Ethernet0/1.330
+ no passive-interface Ethernet0/1.340
+ no passive-interface Ethernet0/1.350
+ no passive-interface Tunnel1
+ network 10.0.0.0 0.0.1.255 area 40
+ network 10.0.2.0 0.0.1.255 area 40
+ network 10.0.4.0 0.0.1.255 area 40
+ network 10.0.6.0 0.0.1.255 area 40
+ network 10.0.17.64 0.0.0.15 area 40
+ network 10.1.100.0 0.0.0.255 area 0
+ default-information originate
+
 ip access-list standard ACL-ADMIN-VTY
- remark Permitir solo subredes de SOC/Admin Puerto Plata y Soporte SD
- permit 10.0.0.0 0.0.1.255   ! Subred SOC Puerto Plata
- permit 10.0.17.0 0.0.0.31   ! Subred Soporte SD (VPN)
+ permit 10.0.0.0 0.0.1.255
+ permit 10.0.17.0 0.0.0.31
  deny any log
 
 line vty 0 4
@@ -707,19 +825,16 @@ vlan 999
 
 vlan dot1q tag native
 
-! Spanning Tree Optimization
 spanning-tree mode rapid-pvst
 spanning-tree extend system-id
 spanning-tree vlan 310,320,330,340,350 priority 24576
 
-! Enlace hacia el Router R-PUERTOPLATA (e0/0)
 interface Ethernet0/0
  switchport trunk native vlan 999
  switchport nonegotiate
  ip dhcp snooping trust
  ip arp inspection trust
 
-! Troncales hacia sw-31 (e0/1) y sw-30 (e0/2)
 interface range Ethernet0/1 - 2
  switchport trunk native vlan 999
  switchport nonegotiate
@@ -727,7 +842,6 @@ interface range Ethernet0/1 - 2
  ip dhcp snooping trust
  ip arp inspection trust
 
-! DHCP Snooping y DAI en Distribución
 ip dhcp snooping
 ip dhcp snooping vlan 310,320,330,340,350
 no ip dhcp snooping information option
@@ -735,7 +849,6 @@ no ip dhcp snooping information option
 ip arp inspection vlan 310,320,330,340,350
 ip arp inspection validate src-mac dst-mac ip
 
-! Apagado de puertos desocupados
 interface range Ethernet0/3, Ethernet1/0 - 3, Ethernet2/0 - 3, Ethernet3/0 - 3
  switchport mode access
  switchport access vlan 999
@@ -793,14 +906,12 @@ spanning-tree extend system-id
 errdisable recovery cause psecure-violation
 errdisable recovery interval 300
 
-! Uplink hacia SW-5
 interface Ethernet0/0
  switchport trunk native vlan 999
  switchport nonegotiate
  ip dhcp snooping trust
  ip arp inspection trust
 
-! DHCP Snooping y Dynamic ARP Inspection
 ip dhcp snooping
 ip dhcp snooping vlan 310,320
 no ip dhcp snooping information option
@@ -808,7 +919,6 @@ no ip dhcp snooping information option
 ip arp inspection vlan 310,320
 ip arp inspection validate src-mac dst-mac ip
 
-! Puertos de Acceso Especializados (DFIR y Malware)
 interface range Ethernet0/1 - 2
  switchport mode access
  switchport nonegotiate
@@ -821,7 +931,6 @@ interface range Ethernet0/1 - 2
  spanning-tree portfast edge
  spanning-tree bpduguard enable
 
-! Aislamiento de Puertos No Usados
 interface range Ethernet0/3, Ethernet1/0 - 3, Ethernet2/0 - 3, Ethernet3/0 - 3
  switchport mode access
  switchport access vlan 999
@@ -879,14 +988,12 @@ spanning-tree extend system-id
 errdisable recovery cause psecure-violation
 errdisable recovery interval 300
 
-! Uplink hacia SW-5
 interface Ethernet0/0
  switchport trunk native vlan 999
  switchport nonegotiate
  ip dhcp snooping trust
  ip arp inspection trust
 
-! DHCP Snooping y Dynamic ARP Inspection
 ip dhcp snooping
 ip dhcp snooping vlan 330,340,350
 no ip dhcp snooping information option
@@ -894,7 +1001,6 @@ no ip dhcp snooping information option
 ip arp inspection vlan 330,340,350
 ip arp inspection validate src-mac dst-mac ip
 
-! Puertos de Acceso Especializados (TH, Red Team, SOC)
 interface range Ethernet0/1 - 3
  switchport mode access
  switchport nonegotiate
@@ -907,7 +1013,6 @@ interface range Ethernet0/1 - 3
  spanning-tree portfast edge
  spanning-tree bpduguard enable
 
-! Aislamiento de Puertos No Usados
 interface range Ethernet1/0 - 3, Ethernet2/0 - 3, Ethernet3/0 - 3
  switchport mode access
  switchport access vlan 999

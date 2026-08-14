@@ -72,6 +72,7 @@ interface Tunnel1
  ip nhrp nhs 10.1.100.1
  ip nhrp authentication AEGIS
  ip ospf network point-to-multipoint
+ tunnel protection ipsec profile AEGIS-PROFILE
  no shutdown
 
 ! --- Enrutamiento Estático (Salida a Internet) ---
