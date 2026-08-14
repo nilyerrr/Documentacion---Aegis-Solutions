@@ -94,6 +94,7 @@ interface Tunnel1
  ip nhrp map multicast dynamic
  ip nhrp authentication AEGIS
  ip ospf network point-to-multipoint
+ ip ospf 1 area 0
  tunnel protection ipsec profile AEGIS-PROFILE
  no shutdown
 

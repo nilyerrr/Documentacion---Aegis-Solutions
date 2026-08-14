@@ -86,6 +86,7 @@ interface Tunnel1
  ip nhrp nhs 10.1.100.1
  ip nhrp authentication AEGIS
  ip ospf network point-to-multipoint
+ ip ospf 1 area 0
  tunnel protection ipsec profile AEGIS-PROFILE
  no shutdown
 
@@ -100,7 +101,7 @@ interface Ethernet0/0
 interface Ethernet0/1
  description TRUNK HACIA SW-5
  no ip address
- duplex auto
+ duplex full
  no shutdown
 
 interface Ethernet0/1.310

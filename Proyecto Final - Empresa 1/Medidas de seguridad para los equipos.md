@@ -21,12 +21,15 @@ A continuación se resume la evaluación de los scripts existentes frente a los 
 
 ## 2. Diagnósticos Técnicos de Conectividad y Soluciones de Red
 
-### 2.1. Diagnóstico de la Caída de Ping en Santiago y Puerto Plata (DMVPN / IPsec Mismatch)
-**Causa Raíz Identificada**:
-1. **Falta de Protección IPsec en el HUB (Santo Domingo)**: Los routers `R-Santiago` y `R-PUERTOPLATA` tenían configurada la protección IPsec en su interfaz del túnel (`tunnel protection ipsec profile AEGIS-PROFILE`). Sin embargo, el Router HUB de Santo Domingo (`R-SD`) y `R-Romana` **no tenían aplicada** la directiva `tunnel protection ipsec profile AEGIS-PROFILE` en la interfaz `Tunnel1`.
-   * **Consecuencia**: Cuando Santiago y Puerto Plata intentaban negociar la fase ISAKMP/IPsec con Santo Domingo, el HUB descartaba la negociación. Por ello, Santo Domingo y La Romana sí se comunicaban (ambos en GRE plano), mientras que Santiago y Puerto Plata quedaban aislados sin túnel VPN funcional.
-2. **Error de Sintaxis en OSPF Puerto Plata**: En `R-PUERTOPLATA`, la línea `router-id 9.9.9.9.9` contenía 5 octetos (inválido en Cisco IOS), provocando que el proceso OSPF fallara por sintaxis. Se corrigió a `router-id 5.5.5.5`.
-3. **Desalineación de Áreas OSPF**: Se alineó el área de las interfaces de acceso y subinterfaces en Santiago (`area 20`) y Puerto Plata (`area 40`).
+### 2.1. Diagnóstico de los Mensajes en Consola (`OSPF-4-ERRRCV` y `CDP-4-DUPLEX_MISMATCH`)
+
+#### A. Mensaje: `%OSPF-4-ERRRCV: Received invalid packet: mismatched area ID from backbone area from 10.1.100.1, Tunnel1`
+- **Causa**: Al declarar redes OSPF con máscaras wildcard generales (`network 10.0.0.0 0.255.255.255 area 40`), la interfaz `Tunnel1` (`10.1.100.4`) terminaba dentro del Área 40 en el router de Puerto Plata, mientras que el HUB de Santo Domingo (`10.1.100.1`) enviaba los paquetes Hello de OSPF pertenencientes a la **Area 0 (Backbone)**.
+- **Solución**: Declarar explícitamente `ip ospf 1 area 0` directamente bajo la interfaz `Tunnel1` en todos los routers de las 4 sedes. Esto sobreescribe cualquier wildcard mask y garantiza que el túnel VPN pertenezca permanentemente al Área 0.
+
+#### B. Mensaje: `%CDP-4-DUPLEX_MISMATCH: duplex mismatch discovered on Ethernet0/1 (not full duplex), with SW-5 Ethernet0/0 (full duplex)`
+- **Causa**: La interfaz `Ethernet0/1` del router `R-PUERTOPLATA` estaba configurada en modo `duplex auto` (half-duplex negociado), mientras que la interfaz `Ethernet0/0` del switch `SW-5` estaba configurada en `duplex full`.
+- **Solución**: Configurar `duplex full` en `Ethernet0/1` de `R-PUERTOPLATA` para igualar la velocidad y la transmisión bidireccional completa.
 
 ---
 
@@ -65,7 +68,6 @@ Cuando se habilita **DHCP Snooping** en switches Cisco IOS, el switch automátic
 enable
 configure terminal
 
-! --- 1. Control de Acceso: ACL de Gestión para VTY ---
 ip access-list standard ACL-ADMIN-VTY
  remark Permitir solo subredes de Soporte Técnico y Administración
  permit 10.0.17.0 0.0.0.31
@@ -82,7 +84,6 @@ line con 0
  exec-timeout 5 0
  logging synchronous
 
-! --- 2. Aseguramiento de DMVPN con IPsec ---
 crypto isakmp policy 10
  encr aes 256
  hash sha256
@@ -99,7 +100,7 @@ crypto ipsec profile AEGIS-PROFILE
 
 interface Tunnel1
  description TUNNEL HUB SANTO DOMINGO
- ip address 10.1.100.1 255.255.250
+ ip address 10.1.100.1 255.255.255.0
  ip mtu 1400
  tunnel source Ethernet0/0
  tunnel mode gre multipoint
@@ -107,6 +108,7 @@ interface Tunnel1
  ip nhrp map multicast dynamic
  ip nhrp authentication AEGIS
  ip ospf network point-to-multipoint
+ ip ospf 1 area 0
  tunnel protection ipsec profile AEGIS-PROFILE
  no shutdown
 
@@ -334,6 +336,7 @@ interface Tunnel1
  ip nhrp nhs 10.1.100.1
  ip nhrp authentication AEGIS
  ip ospf network point-to-multipoint
+ ip ospf 1 area 0
  tunnel protection ipsec profile AEGIS-PROFILE
  no shutdown
 
@@ -583,6 +586,7 @@ interface Tunnel1
  ip nhrp nhs 10.1.100.1
  ip nhrp authentication AEGIS
  ip ospf network point-to-multipoint
+ ip ospf 1 area 0
  tunnel protection ipsec profile AEGIS-PROFILE
  no shutdown
 
@@ -763,7 +767,14 @@ interface Tunnel1
  ip nhrp nhs 10.1.100.1
  ip nhrp authentication AEGIS
  ip ospf network point-to-multipoint
+ ip ospf 1 area 0
  tunnel protection ipsec profile AEGIS-PROFILE
+ no shutdown
+
+interface Ethernet0/1
+ description TRUNK HACIA SW-5
+ no ip address
+ duplex full
  no shutdown
 
 router ospf 1
