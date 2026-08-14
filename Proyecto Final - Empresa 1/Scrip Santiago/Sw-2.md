@@ -2,7 +2,6 @@ enable
 configure terminal
 hostname SW-2
 no ip domain-lookup
-ip routing
 
 vlan 99
  name TRANSITO_WAN
@@ -60,42 +59,8 @@ interface Ethernet0/3
  switchport access vlan 130
  no shutdown
 
-! --- SVIs (gateways) + relay DHCP hacia el server ---
-interface Vlan199
- ip address 10.0.10.1 255.255.254.0
- ip helper-address 10.0.10.2
- no shutdown
-
-interface Vlan140
- ip address 10.0.12.1 255.255.255.0
- ip helper-address 10.0.10.2
- no shutdown
-
-interface Vlan110
- ip address 10.0.14.1 255.255.255.0
- ip helper-address 10.0.10.2
- no shutdown
-
-interface Vlan130
- ip address 10.0.17.33 255.255.255.240
- ip helper-address 10.0.10.2
- no shutdown
-
-interface Vlan99
- description ENLACE L3 HACIA R-SANTIAGO
- ip address 10.0.19.2 255.255.255.252
- no shutdown
-
-! --- OSPF (area 30) ---
-router ospf 1
- router-id 3.3.3.3
- passive-interface default
- no passive-interface Vlan99
- network 10.0.10.0 0.0.1.255 area 20
- network 10.0.12.0 0.0.0.255 area 20
- network 10.0.14.0 0.0.0.255 area 20
- network 10.0.17.32 0.0.0.15 area 20
- network 10.0.19.0 0.0.0.3 area 20
+! --- Interfaz de Gestión (Si aplica, se puede usar VLAN99 o dejar sin IP) ---
+! (Sin SVIs de Gateway ni enrutamiento OSPF, ya que el enrutamiento lo hace SWM-1)
 
 enable secret AEGIS-2026
 username admin privilege 15 secret AEGIS-2026
