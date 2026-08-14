@@ -35,43 +35,6 @@ interface Ethernet0/0
  switchport trunk allowed vlan 99
  no shutdown
 
-! --- SVIs (Gateways de Santiago) ---
-interface Vlan199
- ip address 10.0.10.1 255.255.254.0
- ip helper-address 10.0.10.2
- no shutdown
-
-interface Vlan140
- ip address 10.0.12.1 255.255.255.0
- ip helper-address 10.0.10.2
- no shutdown
-
-interface Vlan110
- ip address 10.0.14.1 255.255.255.0
- ip helper-address 10.0.10.2
- no shutdown
-
-interface Vlan130
- ip address 10.0.17.33 255.255.255.240
- ip helper-address 10.0.10.2
- no shutdown
-
-interface Vlan99
- description ENLACE L3 HACIA R-SANTIAGO
- ip address 10.0.19.2 255.255.255.252
- no shutdown
-
-! --- OSPF (area 20) ---
-router ospf 1
- router-id 3.3.3.3
- passive-interface default
- no passive-interface Vlan99
- network 10.0.10.0 0.0.1.255 area 20
- network 10.0.12.0 0.0.0.255 area 20
- network 10.0.14.0 0.0.0.255 area 20
- network 10.0.17.32 0.0.0.15 area 20
- network 10.0.19.0 0.0.0.3 area 20
-
 enable secret AEGIS-2026
 username admin privilege 15 secret AEGIS-2026
 line con 0
