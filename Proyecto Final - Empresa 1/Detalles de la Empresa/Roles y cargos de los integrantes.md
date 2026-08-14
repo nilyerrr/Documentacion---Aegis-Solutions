@@ -12,11 +12,11 @@ tags:
 
 # 👥 Roles y Cargos de los Integrantes — Aegis Solutions
 
-> **Equipo:** 6 integrantes. Todos cuentan con usuario activo en la infraestructura (RADIUS, FTP y Correo) según los scripts de [[RADIUS.md|Santiago]].
+> **Equipo:** 6 integrantes. Todos cuentan con usuario activo en la infraestructura (RADIUS, FTP y Correo) 
 
 ---
 
-## 📋 Tabla Maestra (Consolidada)
+## 📋 Tabla Maestra 
 
 | #   | Integrante         | Cargo Corporativo                      | Nivel     | Equipo Técnico           | Rol Dual |
 | --- | ------------------ | -------------------------------------- | --------- | ------------------------ | -------- |
@@ -94,7 +94,6 @@ Este equipo reporta a la instancia superior de la directiva empresarial.
 |---|---|---|---|
 | **Seguridad** | Reylin Santana | **CEO & CISO** *(rol dual)* | Despliegue de **DMVPN** para comunicaciones seguras inter-sucursales, Port Security para control de acceso físico y ACLs avanzadas para blindar la red. |
 
-> ⚠️ **Corrección:** el documento anterior decía "VPN IPsec"; el proyecto implementa **DMVPN (GRE + NHRP)**, según [[Estructura de Topologia.md|topología]] y los scripts de enrutamiento.
 
 ### D. Equipo de Documentación y Planificación IP
 
@@ -116,21 +115,16 @@ Este equipo reporta a la instancia superior de la directiva empresarial.
 
 ## 📦 Matriz de Responsabilidades por Entregable
 
-| Entregable del proyecto | Responsable(s) | Estado |
-|---|---|---|
-| Topología y diseño LAN/WAN | Neury | ✅ |
-| Scripts de Santo Domingo (R-SD, SWM-1/2, SW-10/11/12) | Reylin + Neury | ✅ |
-| Scripts de La Romana (R-ROMANA, SW-3, SW-9) | Franchesca + Starlin | ✅ |
-| Scripts de Santiago (R-SANTIAGO, SWM-1/Sw-2, servicios) | Starlin + Randy | ⏳ Fase 2 |
-| VLSM y tabla de direccionamiento | Randy + Darling | ✅ |
-| Documentación y diagramas | Darling | ✅ |
-| Servicios de red (DHCP, DNS, FTP, MAIL, RADIUS) | Starlin | ⏳ Fase 2 |
-| Seguridad perimetral (DMVPN, ACLs, Port Security) | Reylin | ✅ |
+| Entregable del proyecto                                 | Responsable(s)       | Estado |
+| ------------------------------------------------------- | -------------------- | ------ |
+| Topología y diseño LAN/WAN                              | Neury                | ✅      |
+| Scripts de Santo Domingo (R-SD, SWM-1/2, SW-10/11/12)   | Reylin + Neury       | ✅      |
+| Scripts de La Romana (R-ROMANA, SW-3, SW-9)             | Franchesca + Starlin | ✅      |
+| Scripts de Santiago (R-SANTIAGO, SWM-1/Sw-2, servicios) | Starlin + Randy      | ✅      |
+| VLSM y tabla de direccionamiento                        | Randy + Darling      | ✅      |
+| Documentación y diagramas                               | Darling              | ✅      |
+| Servicios de red (DHCP, DNS, FTP, MAIL, RADIUS)         | Starlin              | ✅      |
+| Seguridad perimetral (DMVPN, ACLs, Port Security)       | Reylin               | ✅      |
 
 ---
 
-## ⚠️ Notas de consistencia
-
-1. **Rol dual**: todos los integrantes cumplen un cargo corporativo *y* un rol técnico en la implementación. Se uniformizó la nomenclatura.
-2. **VLSM**: la responsabilidad principal recae en Randy/Darling (Planificación IP), aunque el diseño técnico de red es de Neury — confirmar si es el reparto deseado.
-3. La asignación de scripts por sede en la matriz es una **propuesta de trazabilidad** basada en los roles definidos; ajustar si el reparto real fue otro.

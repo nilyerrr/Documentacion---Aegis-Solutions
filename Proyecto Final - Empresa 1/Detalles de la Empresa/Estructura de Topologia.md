@@ -61,19 +61,23 @@ La arquitectura implementa un modelo híbrido que combina un diseño jerárquico
 
 ### 1. Santo Domingo: La Sede Central (Headquarters)
 
-Esta es la columna vertebral administrativa y directiva de la empresa. Es la topología es la más robusta, utilizando un modelo jerárquico clásico de tres capas (Core, Distribución con SWM-1/SWM-2, y Acceso).
+Esta es la columna vertebral administrativa y directiva de la empresa. Es la topología más robusta, utilizando un modelo jerárquico clásico de tres capas (Core, Distribución con SWM-1/SWM-2, y Acceso).
 
 - **Rol Principal:** Gestión Corporativa y Operaciones de Negocio.
     
-- **Departamentos que aloja:** Dirección General (VLAN 10), Recursos Humanos (VLAN 20), Cumplimiento y Auditoría (VLAN 30), Soporte Técnico (VLAN 40), Finanzas (VLAN 50), Ventas (VLAN 60) y Marketing (VLAN 70).
+- **Departamentos que aloja:** 
+  Dirección General (VLAN 10), Recursos Humanos (VLAN 20), Cumplimiento y Auditoría (VLAN 30), Soporte Técnico (VLAN 40), Finanzas (VLAN 50), Ventas (VLAN 60) y Marketing (VLAN 70).
     
 - **Propósito:** Aquí se toman las decisiones de negocio, se maneja la nómina, las ventas masivas y el cumplimiento legal. Es el cerebro administrativo que mantiene la empresa a flote comercialmente.
 
 ![[Pasted image 20260814164925.png]]
 
+
+*************************************************************
+
 ### 2. Puerto Plata: El Centro de Operaciones de Seguridad (SOC)
 
-Esta sucursal está completamente aislada de las operaciones administrativas tradicionales. Es tu fortaleza técnica y tu área de especialidad directa como CISO.
+Esta sucursal está completamente aislada de las operaciones administrativas tradicionales. 
 
 - **Rol Principal:** Defensa, Investigación y Seguridad Ofensiva.
     
@@ -81,13 +85,12 @@ Esta sucursal está completamente aislada de las operaciones administrativas tra
     
 - **Propósito:** Es el búnker técnico de la empresa. Desde aquí, los ingenieros de ciberseguridad monitorean la red, cazan amenazas, analizan malware aislado e intentan vulnerar los propios sistemas (Red Team) para asegurar que la infraestructura de los clientes y la propia sea impenetrable.
     
-- **Estado:** ⚠️ Scripts creados (R-PUERTO-PLATA, SW-5, sw-30, sw-31). Pendientes de integración.
 
 ![[Pasted image 20260814164942.png]]
 
-### 3. Santiago: Centro de Datos Regional y Corporativo
 
-Esta sede tiene una mezcla entre administración y alojamiento de servicios críticos. Cuenta con un servidor dedicado y un esquema de switching multicapa.
+**********************************************
+### 3. Santiago: Centro de Datos Regional y Corporativo
 
 - **Rol Principal:** Nodo de Servicios (Data Center) y Ventas Regionales.
     
@@ -95,9 +98,12 @@ Esta sede tiene una mezcla entre administración y alojamiento de servicios crí
     
 - **Propósito:** Actúa como el motor tecnológico de la zona norte. Al tener un "Centro de Datos" y "Servidores" en su propia VLAN (199 y 110), funciona como el sitio principal de alojamiento de aplicaciones de la empresa o como un sitio de recuperación ante desastres (Disaster Recovery) para respaldar a Santo Domingo.
     
-- **Estado:** ⚠️ Scripts creados (R-SANTIAGO, SW-1, SW-2). Pendientes de integración. Servidores Linux pendientes.
+
 
 ![[Pasted image 20260814164953.png]]
+
+
+*************************************************************
 
 ### 4. La Romana: Centro de Ingeniería y Consultoría
 
