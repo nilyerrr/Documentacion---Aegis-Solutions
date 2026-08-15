@@ -2,12 +2,78 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const servicesList = [
-  { id: 's1', title: 'Operaciones SOC (Tier 1 y 2)', desc: 'Monitoreo 24/7 de alertas, revisión de logs y respuesta rápida ante incidentes.', price: 1500 },
-  { id: 's2', title: 'Auditoría Ofensiva (Pentesting)', desc: 'Simulación de ataques, análisis de vulnerabilidades e ingeniería social.', price: 2500 },
-  { id: 's3', title: 'Infraestructura & Redes (LAN/WAN)', desc: 'Diseño de topologías, segmentación, enrutamiento avanzado y alta disponibilidad.', price: 2000 },
-  { id: 's4', title: 'Seguridad Cloud & Servidores', desc: 'Hardening de servidores, gestión de identidades y planes DRP.', price: 1800 },
-  { id: 's5', title: 'Consultoría TI (Arquitectura)', desc: 'Levantamiento inicial, diseño de soluciones a medida y políticas de riesgo.', price: 1200 },
-  { id: 's6', title: 'DFIR & Cumplimiento', desc: 'Respuesta avanzada a incidentes, investigación forense y cumplimiento normativo.', price: 3000 }
+  { 
+    id: 'core', 
+    title: 'AEGIS Core', 
+    price: 4000, 
+    isMonthly: true,
+    features: [
+      'Ingeniería de Infraestructura (VLANs, VPNs, OSPF)',
+      'Mesa de Ayuda (Soporte Técnico Tier 1/2)',
+      'Administración de Switches, Routers y Firewalls',
+      'Inventario de activos y reportes mensuales'
+    ]
+  },
+  { 
+    id: 'shield', 
+    title: 'AEGIS Shield', 
+    price: 9000, 
+    isMonthly: true,
+    features: [
+      'Todo lo incluido en el Plan Core',
+      'SOC 24/7 (Monitoreo, SIEM, triaje de alertas)',
+      'Gestión de Endpoints (EDR)',
+      'Cumplimiento y Respuesta a Incidentes (DFIR)'
+    ]
+  },
+  { 
+    id: 'fortress', 
+    title: 'AEGIS Fortress', 
+    price: 22000, 
+    isMonthly: true,
+    features: [
+      'Todo lo incluido en el Plan Shield',
+      'Auditoría Ofensiva Continua (Red Team)',
+      'Threat Hunting y Pentesting recurrente',
+      'vCISO Dedicado y SOC Tier 3 (Forense)'
+    ]
+  },
+  { 
+    id: 'od1', 
+    title: 'Pentesting Completo', 
+    price: 8000, 
+    isMonthly: false,
+    features: [
+      'Evaluación de seguridad en red interna',
+      'Pruebas de aplicaciones web',
+      'Reporte detallado con CVSS scoring',
+      'Proyecto bajo demanda (2-4 semanas)'
+    ]
+  },
+  { 
+    id: 'od2', 
+    title: 'Auditoría Red Team', 
+    price: 15000, 
+    isMonthly: false,
+    features: [
+      'Simulación de ataque dirigido',
+      'Evaluación de vector de entrada',
+      'Prueba de movimiento lateral y exfiltración',
+      'Proyecto bajo demanda (3-6 semanas)'
+    ]
+  },
+  { 
+    id: 'od3', 
+    title: 'Consultoría Normativa', 
+    price: 12000, 
+    isMonthly: false,
+    features: [
+      'Alineación a ISO 27001, HIPAA o PCI-DSS',
+      'Evaluación de brechas (Gap Analysis)',
+      'Diseño de políticas de seguridad',
+      'Preparación integral para certificación'
+    ]
+  }
 ];
 
 const Services = () => {
@@ -32,14 +98,16 @@ const Services = () => {
   };
 
   return (
-    <section id="servicios" className="section" style={{ background: 'var(--bg-color)', minHeight: '100vh' }}>
+    <section id="servicios" className="section" style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '8rem' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2 className="text-gradient" style={{ fontSize: '3rem', marginBottom: '1rem' }}>Cotizador Interactivo</h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>Selecciona los servicios que tu empresa necesita y obtén un estimado al instante.</p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto' }}>
+            Selecciona los planes de suscripción o servicios bajo demanda que tu empresa necesita y obtén un estimado al instante.
+          </p>
         </div>
         
-        <div className="grid grid-cols-3" style={{ marginBottom: '3rem' }}>
+        <div className="grid grid-cols-3" style={{ marginBottom: '3rem', alignItems: 'stretch' }}>
           {servicesList.map((service) => {
             const isSelected = selectedServices.includes(service.id);
             return (
@@ -52,24 +120,47 @@ const Services = () => {
                   border: isSelected ? '2px solid var(--primary)' : '1px solid var(--border)',
                   background: isSelected ? 'rgba(212, 175, 55, 0.05)' : 'var(--surface)',
                   transform: isSelected ? 'translateY(-5px)' : 'none',
-                  boxShadow: isSelected ? '0 10px 30px rgba(212, 175, 55, 0.15)' : 'none'
+                  boxShadow: isSelected ? '0 10px 30px rgba(212, 175, 55, 0.15)' : 'none',
+                  display: 'flex',
+                  flexDirection: 'column'
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-                  <h3 style={{ fontSize: '1.2rem', color: isSelected ? 'var(--primary)' : 'var(--text-main)', margin: 0 }}>{service.title}</h3>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
+                  <h3 style={{ fontSize: '1.4rem', color: isSelected ? 'var(--primary)' : 'var(--text-main)', margin: 0, fontFamily: 'Space Grotesk' }}>{service.title}</h3>
                   <div style={{ 
                     width: '24px', height: '24px', 
                     borderRadius: '50%', 
                     border: '2px solid var(--primary)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: isSelected ? 'var(--primary)' : 'transparent'
+                    background: isSelected ? 'var(--primary)' : 'transparent',
+                    flexShrink: 0
                   }}>
                     {isSelected && <span style={{ color: '#000', fontSize: '0.8rem', fontWeight: 'bold' }}>✓</span>}
                   </div>
                 </div>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '1.5rem', minHeight: '60px' }}>{service.desc}</p>
-                <div style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--text-main)' }}>
-                  Desde ${service.price.toLocaleString()} USD/mes
+                
+                <ul style={{ 
+                  paddingLeft: '1.2rem', 
+                  color: 'var(--text-muted)', 
+                  fontSize: '0.95rem', 
+                  marginBottom: '1.5rem', 
+                  flexGrow: 1,
+                  listStyleType: 'square'
+                }}>
+                  {service.features.map((feat, idx) => (
+                    <li key={idx} style={{ marginBottom: '0.5rem', lineHeight: '1.4' }}>{feat}</li>
+                  ))}
+                </ul>
+
+                <div style={{ 
+                  fontWeight: 600, 
+                  fontSize: '1.2rem', 
+                  color: 'var(--text-main)', 
+                  borderTop: '1px solid var(--border)', 
+                  paddingTop: '1rem',
+                  marginTop: 'auto' 
+                }}>
+                  Desde ${service.price.toLocaleString()} USD {service.isMonthly ? '/mes' : '(Pago único)'}
                 </div>
               </div>
             );
@@ -78,13 +169,17 @@ const Services = () => {
 
         {/* Floating Quote Summary */}
         <div style={{ 
-          position: 'sticky', 
+          position: 'fixed', 
           bottom: '2rem', 
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '90%',
+          maxWidth: '1000px',
           background: 'rgba(13, 17, 23, 0.95)', 
           backdropFilter: 'blur(10px)',
           border: '1px solid var(--primary)', 
           borderRadius: '12px', 
-          padding: '2rem', 
+          padding: '1.5rem 2rem', 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
@@ -92,16 +187,16 @@ const Services = () => {
           zIndex: 50
         }}>
           <div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--text-main)' }}>Inversión Estimada Mensual</h3>
-            <p style={{ color: 'var(--text-muted)', margin: 0 }}>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '0.2rem', color: 'var(--text-main)' }}>Inversión Estimada</h3>
+            <p style={{ color: 'var(--text-muted)', margin: 0, fontSize: '0.9rem' }}>
               {selectedServices.length === 0 
-                ? 'Selecciona al menos un servicio para ver el total.' 
-                : `${selectedServices.length} servicio(s) seleccionado(s).`}
+                ? 'Selecciona planes o auditorías para ver el total.' 
+                : `${selectedServices.length} elemento(s) seleccionado(s).`}
             </p>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-            <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--primary)', fontFamily: 'Space Grotesk' }}>
-              ${totalCost.toLocaleString()} <span style={{ fontSize: '1.2rem', color: 'var(--text-muted)' }}>USD</span>
+            <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--primary)', fontFamily: 'Space Grotesk' }}>
+              ${totalCost.toLocaleString()} <span style={{ fontSize: '1rem', color: 'var(--text-muted)' }}>USD</span>
             </div>
             <button 
               onClick={handleQuoteRequest}
@@ -110,8 +205,8 @@ const Services = () => {
               style={{ 
                 opacity: selectedServices.length === 0 ? 0.5 : 1, 
                 cursor: selectedServices.length === 0 ? 'not-allowed' : 'pointer',
-                padding: '1rem 2rem',
-                fontSize: '1.1rem'
+                padding: '0.8rem 1.5rem',
+                fontSize: '1rem'
               }}
             >
               Contactar a un Asesor
