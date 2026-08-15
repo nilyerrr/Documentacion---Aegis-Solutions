@@ -1,105 +1,54 @@
 import React from 'react';
 
-const locations = [
-  { 
-    city: 'Santo Domingo', 
-    icon: '🏙️', 
-    role: 'Sede Central (Hub)',
-    desc: 'Centro principal de operaciones de negocio y gobernanza.',
-    departments: [
-      'Dirección General', 
-      'Recursos Humanos', 
-      'Cumplimiento', 
-      'Soporte Técnico', 
-      'Finanzas', 
-      'Ventas', 
-      'Marketing'
-    ]
-  },
-  { 
-    city: 'Santiago', 
-    icon: '🌄', 
-    role: 'Centro de Datos & Empresarial',
-    desc: 'Operación del centro de datos corporativo y servicios a nivel empresa.',
-    departments: [
-      'Centro de Datos', 
-      'Ventas Corporativas', 
-      'Administración', 
-      'Servidores'
-    ]
-  },
-  { 
-    city: 'Puerto Plata', 
-    icon: '🚢', 
-    role: 'Laboratorio de Ciberseguridad',
-    desc: 'Investigación avanzada, inteligencia de amenazas y equipo ofensivo (Seguridad Ofensiva y SOC).',
-    departments: [
-      'DFIR (Forense)', 
-      'Malware Research Lab', 
-      'Threat Intelligence', 
-      'Red Team', 
-      'SOC'
-    ]
-  },
-  { 
-    city: 'La Romana', 
-    icon: '🏖️', 
-    role: 'Consultoría & Implementación',
-    desc: 'Diseño e implementación de proyectos e ingeniería de infraestructura a gran escala.',
-    departments: [
-      'Dirección Regional', 
-      'Consultoría TI', 
-      'Ingeniería de Infraestructura'
-    ]
-  }
-];
-
 const Locations = () => {
   return (
     <div style={{ paddingTop: '80px', minHeight: '80vh' }}>
       <section className="section">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h1 className="text-gradient" style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>Nuestras Sedes</h1>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
-              Estamos estratégicamente ubicados en puntos clave del país para garantizar cobertura total, alta disponibilidad de nuestros servicios y respuesta inmediata ante cualquier incidente.
-            </p>
           </div>
           
-          <div className="grid grid-cols-2" style={{ gap: '3rem', maxWidth: '1100px', margin: '0 auto' }}>
-            {locations.map((loc, idx) => (
-              <div key={idx} className="glass-card" style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '1.5rem' }}>
-                  <div style={{ fontSize: '3.5rem', filter: 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.3))' }}>{loc.icon}</div>
-                  <div>
-                    <h3 style={{ fontSize: '2rem', color: 'var(--text-main)', marginBottom: '0.2rem', fontFamily: 'Space Grotesk' }}>{loc.city}</h3>
-                    <p style={{ color: 'var(--primary)', fontWeight: 600, fontSize: '1.1rem', letterSpacing: '0.5px' }}>{loc.role}</p>
-                  </div>
-                </div>
-                
-                <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '2rem', flexGrow: 1 }}>
-                  {loc.desc}
-                </p>
-                
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
-                  <h4 style={{ color: 'white', marginBottom: '1rem', fontSize: '1.1rem' }}>Departamentos asignados:</h4>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
-                    {loc.departments.map((dept, i) => (
-                      <span key={i} style={{ 
-                        background: 'rgba(32, 83, 117, 0.3)', 
-                        border: '1px solid var(--secondary)', 
-                        padding: '0.4rem 0.8rem', 
-                        borderRadius: '4px', 
-                        fontSize: '0.9rem',
-                        color: 'var(--text-muted)'
-                      }}>
-                        {dept}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="glass-card" style={{ padding: '4rem', maxWidth: '1000px', margin: '0 auto', color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: '1.8' }}>
+            <p style={{ marginBottom: '3rem', fontSize: '1.25rem', color: 'var(--text-main)', textAlign: 'center' }}>
+              En <strong>AEGIS Solutions</strong> operamos a través de una red de sucursales estratégicamente distribuidas. Esto nos permite garantizar cobertura total y respuesta inmediata ante incidentes. Cada sede cumple un rol altamente especializado dentro de nuestro ecosistema.
+            </p>
+
+            <div style={{ marginBottom: '2.5rem' }}>
+              <h3 style={{ color: 'var(--primary)', fontSize: '1.6rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                <span>🏙️</span> Santo Domingo — Sede Central
+              </h3>
+              <p style={{ paddingLeft: '2.6rem' }}>
+                Funciona como nuestro núcleo de operaciones, administración y gobernanza. Desde la capital gestionamos la dirección corporativa, finanzas, cumplimiento de normativas, ventas y el soporte a nivel ejecutivo.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '2.5rem' }}>
+              <h3 style={{ color: 'var(--primary)', fontSize: '1.6rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                <span>🚢</span> Puerto Plata — Laboratorio de Ciberseguridad
+              </h3>
+              <p style={{ paddingLeft: '2.6rem' }}>
+                Es el corazón táctico de la empresa. Aquí concentra todas las operaciones del SOC (Centro de Operaciones de Seguridad), la división de ataque (Red Team), inteligencia de amenazas y análisis forense digital (DFIR).
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '2.5rem' }}>
+              <h3 style={{ color: 'var(--primary)', fontSize: '1.6rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                <span>🌄</span> Santiago — Centro de Datos Corporativo
+              </h3>
+              <p style={{ paddingLeft: '2.6rem' }}>
+                Alberga nuestra infraestructura principal. Esta sucursal es responsable de la administración de la granja de servidores, servicios en la nube y de asegurar la continuidad ininterrumpida de nuestras plataformas y las de nuestros clientes.
+              </p>
+            </div>
+
+            <div>
+              <h3 style={{ color: 'var(--primary)', fontSize: '1.6rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                <span>🏖️</span> La Romana — Ingeniería y Consultoría TI
+              </h3>
+              <p style={{ paddingLeft: '2.6rem' }}>
+                Nuestra base para la planificación arquitectónica. Desde aquí, los ingenieros y arquitectos de redes diseñan, configuran e implementan infraestructuras físicas de alto rendimiento y conectividad segmentada para nuestros proyectos.
+              </p>
+            </div>
           </div>
         </div>
       </section>
