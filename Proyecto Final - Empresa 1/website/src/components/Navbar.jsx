@@ -33,7 +33,7 @@ const Navbar = () => {
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           <Link to="/" style={{ color: isActive('/'), textDecoration: 'none', fontWeight: 500, fontSize: '0.95rem' }}>Inicio</Link>
           <Link to="/servicios" style={{ color: isActive('/servicios'), textDecoration: 'none', fontWeight: 500, fontSize: '0.95rem' }}>Servicios</Link>
-          <Link to="/nosotros" style={{ color: isActive('/nosotros'), textDecoration: 'none', fontWeight: 500, fontSize: '0.95rem' }}>Sobre Nosotros</Link>
+          <Link to="/nosotros" style={{ color: isActive('/nosotros'), textDecoration: 'none', fontWeight: 500, fontSize: '0.95rem' }}>Integrantes</Link>
           <Link to="/socios" style={{ color: isActive('/socios'), textDecoration: 'none', fontWeight: 500, fontSize: '0.95rem' }}>Socios</Link>
           <Link to="/sedes" style={{ color: isActive('/sedes'), textDecoration: 'none', fontWeight: 500, fontSize: '0.95rem' }}>Sedes</Link>
           <Link to="/contacto" className="btn btn-primary" style={{ padding: '0.6rem 1.5rem', fontSize: '0.95rem' }}>Solicitar Auditoría</Link>
