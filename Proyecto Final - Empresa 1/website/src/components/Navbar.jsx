@@ -99,7 +99,7 @@ const Navbar = () => {
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none', color: 'inherit' }}>
             <img src="/logo.png" alt="AEGIS Logo" style={{ height: '40px' }} onError={(e) => { e.target.style.display = 'none'; }} />
-            <h2 style={{ margin: 0, fontSize: '1.8rem', fontFamily: 'Space Grotesk', fontWeight: 700 }}>AEGIS</h2>
+            <h2 style={{ margin: 0, fontSize: '1.8rem', fontFamily: 'Space Grotesk', fontWeight: 700 }}>Aegis Solutions</h2>
           </Link>
           
           <button 
