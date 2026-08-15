@@ -1,23 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Services from './components/Services';
-import Team from './components/Team';
-import QuoteForm from './components/QuoteForm';
 import Footer from './components/Footer';
+
+// Pages
+import Home from './pages/Home';
+import ServicesPage from './pages/ServicesPage';
+import AboutUs from './pages/AboutUs';
+import Partners from './pages/Partners';
+import Locations from './pages/Locations';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
-      <Hero />
-      <Features />
-      <Services />
-      <Team />
-      <QuoteForm />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/servicios" element={<ServicesPage />} />
+        <Route path="/nosotros" element={<AboutUs />} />
+        <Route path="/socios" element={<Partners />} />
+        <Route path="/sedes" element={<Locations />} />
+        <Route path="/contacto" element={<ContactPage />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 

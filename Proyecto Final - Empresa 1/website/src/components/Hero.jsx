@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const bgRef = useRef(null);
@@ -33,8 +34,8 @@ const Hero = () => {
           Consultoría especializada en redes de alto rendimiento, blindaje en la nube y mitigación proactiva de riesgos.
         </p>
         <div className="animate-fade-in delay-200" style={{ display: 'flex', gap: '1.5rem' }}>
-          <a href="#servicios" className="btn btn-primary">Explorar Soluciones</a>
-          <a href="#nosotros" className="btn btn-outline">Conocer al Equipo</a>
+          <Link to="/servicios" className="btn btn-primary">Explorar Soluciones</Link>
+          <Link to="/nosotros" className="btn btn-outline">Conocer al Equipo</Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -14,10 +15,10 @@ const Footer = () => {
         <div>
           <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', fontFamily: 'Space Grotesk' }}>Navegación</h3>
           <ul style={{ listStyle: 'none', color: 'var(--text-muted)' }}>
-            <li style={{ marginBottom: '0.5rem' }}><a href="#inicio" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e=>e.target.style.color='var(--primary)'} onMouseOut={e=>e.target.style.color='inherit'}>Inicio</a></li>
-            <li style={{ marginBottom: '0.5rem' }}><a href="#servicios" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e=>e.target.style.color='var(--primary)'} onMouseOut={e=>e.target.style.color='inherit'}>Servicios</a></li>
-            <li style={{ marginBottom: '0.5rem' }}><a href="#infraestructura" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e=>e.target.style.color='var(--primary)'} onMouseOut={e=>e.target.style.color='inherit'}>Infraestructura</a></li>
-            <li style={{ marginBottom: '0.5rem' }}><a href="#nosotros" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e=>e.target.style.color='var(--primary)'} onMouseOut={e=>e.target.style.color='inherit'}>Sobre Nosotros</a></li>
+            <li style={{ marginBottom: '0.5rem' }}><Link to="/" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e=>e.target.style.color='var(--primary)'} onMouseOut={e=>e.target.style.color='inherit'}>Inicio</Link></li>
+            <li style={{ marginBottom: '0.5rem' }}><Link to="/servicios" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e=>e.target.style.color='var(--primary)'} onMouseOut={e=>e.target.style.color='inherit'}>Servicios</Link></li>
+            <li style={{ marginBottom: '0.5rem' }}><Link to="/nosotros" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e=>e.target.style.color='var(--primary)'} onMouseOut={e=>e.target.style.color='inherit'}>Sobre Nosotros</Link></li>
+            <li style={{ marginBottom: '0.5rem' }}><Link to="/contacto" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e=>e.target.style.color='var(--primary)'} onMouseOut={e=>e.target.style.color='inherit'}>Contacto</Link></li>
           </ul>
         </div>
         <div>
