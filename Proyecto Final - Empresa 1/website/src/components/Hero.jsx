@@ -13,19 +13,55 @@ const Hero = () => {
             50% { transform: translateY(-25px); }
             100% { transform: translateY(0px); }
           }
+          .hero-content {
+            flex: 1;
+            min-width: 300px;
+            max-width: 700px;
+          }
+          .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            word-wrap: break-word;
+          }
+          .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 600px;
+          }
+          .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+          }
+          @media (max-width: 768px) {
+            .hero-content {
+              text-align: center;
+              margin: 0 auto;
+            }
+            .hero-subtitle {
+              font-size: 1.15rem;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            .hero-buttons {
+              justify-content: center;
+            }
+          }
         `}
       </style>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '4rem' }}>
           
-          <div style={{ flex: 1, minWidth: '300px', maxWidth: '700px' }}>
-            <h1 className="animate-fade-in text-gradient" style={{ fontSize: '4.5rem', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+          <div className="hero-content">
+            <h1 className="animate-fade-in text-gradient hero-title">
               El Escudo Digital para tu Infraestructura y Negocio
             </h1>
-            <p className="animate-fade-in delay-100" style={{ fontSize: '1.25rem', color: 'var(--text-muted)', marginBottom: '3rem' }}>
+            <p className="animate-fade-in delay-100 hero-subtitle">
               Consultoría especializada en redes de alto rendimiento, blindaje en la nube y mitigación proactiva de riesgos.
             </p>
-            <div className="animate-fade-in delay-200" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+            <div className="animate-fade-in delay-200 hero-buttons">
               <Link to="/servicios" className="btn btn-primary">Explorar Soluciones</Link>
               <Link to="/nosotros" className="btn btn-outline">Conocer al Equipo</Link>
             </div>
