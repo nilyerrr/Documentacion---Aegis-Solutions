@@ -13,6 +13,56 @@ const teamMembers = [
       'Auditor Líder ISO 27001'
     ],
     image: '/reylin.jpeg'
+  },
+  {
+    name: 'Ing. Neury',
+    role: 'VP Engineer, CTO & Arquitecto de Red',
+    bio: 'Ingeniero en Ciberseguridad egresado del Instituto Tecnológico de Santo Domingo (INTEC), con un Máster en Arquitectura de Redes y Telecomunicaciones por la Universidad de Stanford, y un Doctorado (PhD) en Arquitectura de Redes de Próxima Generación por el Instituto Tecnológico de Massachusetts (MIT). Con más de una década de experiencia al más alto nivel en la elaboración y diseño de arquitecturas de redes corporativas a gran escala. Soy un experto indiscutible en el área tecnológica, cuya trayectoria se ha forjado liderando la innovación, garantizando la máxima resiliencia en infraestructuras críticas y definiendo la visión estratégica para el despliegue de soluciones de clase mundial.',
+    specialties: 'Elaboración y diseño de arquitecturas de redes corporativas a gran escala, innovación y resiliencia.',
+    certifications: [
+      'PhD MIT',
+      'MSc Stanford',
+      'Ing. INTEC'
+    ],
+    image: '/neury.jpeg'
+  },
+  {
+    name: 'Starlin De La Cruz Alonzo',
+    role: 'Especialista en Servidores & Cloud Computing',
+    bio: 'Profesional en tecnologías de la información y ciberseguridad con sólida trayectoria en el diseño, despliegue, administración y blindaje de infraestructuras de servidores y entornos en la nube. Especializado en la implementación de arquitecturas cloud escalables, alta disponibilidad y modelos de seguridad avanzada para mitigar riesgos e incidentes en entornos corporativos críticos.',
+    specialties: 'Arquitecturas cloud escalables, alta disponibilidad y modelos de seguridad avanzada.',
+    certifications: [
+      'CCNA',
+      'CompTIA Security+',
+      'Cloud Security Specialist',
+      'Admin. de Sistemas (Linux/Windows)'
+    ],
+    image: '/starlin.png'
+  },
+  {
+    name: 'Franchesca Soto Abreu',
+    role: 'Redactor Técnico & Controlador Documental',
+    bio: 'Estudiante de Tecnología/Informática enfocada en redes, infraestructura y control documental técnico. Destaca por su organización, precisión y capacidad para estructurar información técnica compleja de forma clara y accesible. Diseña manuales de servicio, procedimientos de entrega y bitácoras operativas.',
+    specialties: 'Redes de computadoras, administración de sistemas, gestión de proyectos y diagramación lógica/física.',
+    certifications: [
+      'GCFA (SANS Institute)',
+      'GNFA (SANS Institute)',
+      'CHFI (EC-Council)',
+      'CCME (Cellebrite)'
+    ],
+    image: '/franchesca.jpeg'
+  },
+  {
+    name: 'Randy Gabriel Troncoso Tejeda',
+    role: 'Administrador de Repositorios & Gestión Digital',
+    bio: 'Estudiante de Tecnología/Informática enfocado en la administración de redes para PyMEs y la gestión estratégica de documentación técnica e información crítica. Estandariza la información corporativa para garantizar consultas rápidas y soporte técnico eficiente, manteniendo el control de versiones y la actualización de manuales.',
+    specialties: 'Redes de computadoras, diagramación de infraestructura, organización documental y repositorios centralizados.',
+    certifications: [
+      'CCNA 2',
+      'Fundamentos y Admin. de Redes',
+      'Documentación Técnica'
+    ],
+    image: '/randy.jpeg'
   }
 ];
 
@@ -20,7 +70,7 @@ const Team = () => {
   return (
     <section id="integrantes" className="section" style={{ background: 'var(--surface)', paddingBottom: '4rem' }}>
       <div className="container">
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', maxWidth: '1000px', margin: '0 auto' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', maxWidth: '1000px', margin: '0 auto' }}>
           {teamMembers.map((member, index) => (
             <div key={index} className="glass-card" style={{ display: 'flex', gap: '3rem', alignItems: 'center', flexWrap: 'wrap', padding: '3rem' }}>
               <div style={{ width: '280px', height: '280px', borderRadius: '12px', overflow: 'hidden', flexShrink: 0, border: '2px solid var(--primary)' }}>
