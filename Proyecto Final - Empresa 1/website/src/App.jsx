@@ -12,10 +12,12 @@ import Locations from './pages/Locations';
 import ContactPage from './pages/ContactPage';
 
 import ChatWidget from './components/ChatWidget';
+import NetworkBackground from './components/NetworkBackground';
 
 function App() {
   return (
     <Router>
+      <NetworkBackground />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
