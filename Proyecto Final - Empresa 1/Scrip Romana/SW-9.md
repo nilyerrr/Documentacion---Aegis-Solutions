@@ -19,7 +19,7 @@ crypto key generate rsa modulus 2048
 vlan 210
  name DIR_REGIONAL
 vlan 220
- name CONSULTORIA_TICONF CO
+name CONSULTORIA_TI
 vlan 230
  name INFRAESTRUCTURA
 vlan 99
