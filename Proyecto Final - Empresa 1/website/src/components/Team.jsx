@@ -10,7 +10,8 @@ const teamMembers = [
       'GCIH (SANS) & eCIR (INE)',
       'CDSA (HTB) & BTF',
       'CompTIA Security+',
-      'Auditor Líder ISO 27001'
+      'Auditor Líder ISO 27001',
+      'Threat Hunting & DFIR (CCDL2)'
     ],
     image: '/reylin.jpeg'
   },
