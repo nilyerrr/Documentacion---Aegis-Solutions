@@ -20,9 +20,13 @@ const teamMembers = [
     bio: 'Ingeniero en Ciberseguridad egresado del Instituto Tecnológico de Santo Domingo (INTEC), con un Máster en Arquitectura de Redes y Telecomunicaciones por la Universidad de Stanford, y un Doctorado (PhD) en Arquitectura de Redes de Próxima Generación por el Instituto Tecnológico de Massachusetts (MIT). Con más de una década de experiencia al más alto nivel en la elaboración y diseño de arquitecturas de redes corporativas a gran escala. Soy un experto indiscutible en el área tecnológica, cuya trayectoria se ha forjado liderando la innovación, garantizando la máxima resiliencia en infraestructuras críticas y definiendo la visión estratégica para el despliegue de soluciones de clase mundial.',
     specialties: 'Elaboración y diseño de arquitecturas de redes corporativas a gran escala, innovación y resiliencia.',
     certifications: [
-      'PhD MIT',
-      'MSc Stanford',
-      'Ing. INTEC'
+      'Cisco CCAr',
+      'Fortinet FCX / NSE 8',
+      'CCIE Enterprise',
+      'JNCIE-ENT',
+      'AWS Advanced Networking',
+      'Fortinet NSE 5, 6 & 7',
+      'Cisco CCNP'
     ],
     image: '/neury.jpeg'
   },
@@ -50,7 +54,8 @@ const teamMembers = [
       'CHFI (EC-Council)',
       'CCME (Cellebrite)'
     ],
-    image: '/franchesca.jpeg'
+    image: '/franchesca.jpeg',
+    imagePosition: 'center top'
   },
   {
     name: 'Randy Gabriel Troncoso Tejeda',
@@ -77,7 +82,7 @@ const Team = () => {
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: member.imagePosition || 'center' }}
                   onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
                 />
                 <div style={{ display: 'none', width: '100%', height: '100%', background: 'var(--secondary)', alignItems: 'center', justifyContent: 'center', fontSize: '4rem' }}>
