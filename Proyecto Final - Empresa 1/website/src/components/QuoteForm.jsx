@@ -4,7 +4,7 @@ const QuoteForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    service: 'Infraestructura & Redes',
+    service: 'Plan AEGIS Core',
     message: ''
   });
 
@@ -40,10 +40,12 @@ const QuoteForm = () => {
           <div style={{ marginBottom: '1.5rem' }}>
             <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)', fontWeight: 500 }}>Servicio Requerido</label>
             <select name="service" value={formData.service} onChange={handleChange} style={{ width: '100%', padding: '0.8rem', borderRadius: '4px', border: '1px solid var(--border)', background: 'var(--surface-light)', color: 'white', fontFamily: 'Inter' }}>
-              <option>Infraestructura & Redes</option>
-              <option>Seguridad Cloud & Servidores</option>
-              <option>Ciberseguridad & Mitigación</option>
-              <option>Consultoría General</option>
+              <option>Plan AEGIS Core</option>
+              <option>Plan AEGIS Shield</option>
+              <option>Plan AEGIS Fortress</option>
+              <option>Pentesting y Red Team</option>
+              <option>Consultoría Normativa</option>
+              <option>Consultoría General (Otro)</option>
             </select>
           </div>
 
