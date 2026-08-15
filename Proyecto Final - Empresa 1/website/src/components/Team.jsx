@@ -91,8 +91,8 @@ const Team = () => {
       <div className="container">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', maxWidth: '1000px', margin: '0 auto' }}>
           {teamMembers.map((member, index) => (
-            <div key={index} className="glass-card" style={{ display: 'flex', gap: '3rem', alignItems: 'center', flexWrap: 'wrap', padding: '3rem' }}>
-              <div style={{ width: '280px', height: '280px', borderRadius: '12px', overflow: 'hidden', flexShrink: 0, border: '2px solid var(--primary)' }}>
+            <div key={index} className="glass-card team-card">
+              <div className="team-image" style={{ borderRadius: '12px', overflow: 'hidden', border: '2px solid var(--primary)' }}>
                 <img 
                   src={member.image} 
                   alt={member.name} 
@@ -103,7 +103,7 @@ const Team = () => {
                   🛡️
                 </div>
               </div>
-              <div style={{ flex: 1, minWidth: '300px' }}>
+              <div className="team-text">
                 <h3 style={{ fontSize: '2.5rem', marginBottom: '0.2rem', fontFamily: 'Space Grotesk' }}>{member.name}</h3>
                 <p style={{ color: 'var(--primary)', fontWeight: 600, fontSize: '1.2rem', marginBottom: '1.5rem', letterSpacing: '1px' }}>{member.role}</p>
                 <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', marginBottom: '1.5rem', lineHeight: '1.7' }}>
@@ -113,7 +113,7 @@ const Team = () => {
                   <strong style={{ color: 'var(--text-main)', fontSize: '1.05rem' }}>Especialidades: </strong>
                   <span style={{ color: 'var(--text-muted)', fontSize: '1.05rem' }}>{member.specialties}</span>
                 </div>
-                <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
+                <div className="team-certs" style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
                   {member.certifications.map((cert, i) => (
                     <span key={i} style={{ padding: '0.5rem 1rem', background: 'rgba(212, 175, 55, 0.05)', border: '1px solid var(--primary)', borderRadius: '6px', fontSize: '0.9rem', color: 'var(--primary)', fontWeight: 600 }}>
                       {cert}
