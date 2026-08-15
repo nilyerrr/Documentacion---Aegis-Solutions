@@ -16,7 +16,7 @@ const Home = () => {
     <>
       <Hero />
       <Stats />
-      <section className="section" style={{ background: 'var(--bg-color)' }}>
+      <section className="section">
         <div className="container" style={{ maxWidth: '1000px' }}>
           <div className="grid grid-cols-2" style={{ gap: '4rem', alignItems: 'center' }}>
             <div>
@@ -50,7 +50,7 @@ const Home = () => {
       </section>
 
       {/* Valores Section */}
-      <section className="section" style={{ background: 'var(--surface-light)' }}>
+      <section className="section">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="text-primary" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Nuestros Valores</h2>
@@ -58,7 +58,7 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-3">
             {valores.map((val, idx) => (
-              <div key={idx} className="glass-card" style={{ padding: '2rem', background: 'var(--bg-color)' }}>
+              <div key={idx} className="glass-card" style={{ padding: '2rem', background: 'var(--surface-light)' }}>
                 <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'var(--primary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 'bold', fontSize: '1.2rem' }}>
                   ✓
                 </div>
