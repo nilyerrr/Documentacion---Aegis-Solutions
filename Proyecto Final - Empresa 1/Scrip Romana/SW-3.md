@@ -62,7 +62,7 @@ interface Port-channel1
 
 banner motd #
 **************************************************************************
-AEGIS-2026
+AEGIS-2026 - SEDE ROMANA
 ADVERTENCIA: ACCESO RESTRINGIDO.
 Toda actividad en este dispositivo esta siendo monitorizada.
 *************************************************************************
