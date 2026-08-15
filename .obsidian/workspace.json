@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proyecto Final - Empresa 1/Detalles de la Empresa/Sobre Nosotros.md",
+                "file": "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de Topologia.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sobre Nosotros"
+              "title": "Estructura de Topologia"
             }
           }
         ]
@@ -203,6 +203,7 @@
   },
   "active": "f6ed4e7594de5dd3",
   "lastOpenFiles": [
+    "Proyecto Final - Empresa 1/Detalles de la Empresa/Sobre Nosotros.md",
     "Proyecto Final - Empresa 1/website/src/pages/ContactPage.jsx",
     "Proyecto Final - Empresa 1/website/src/pages/Locations.jsx",
     "Proyecto Final - Empresa 1/website/src/pages/Partners.jsx",
@@ -214,7 +215,6 @@
     "Proyecto Final - Empresa 1/website/node_modules/react-router/dist/production/register-roq_0qYo.d.ts",
     "Proyecto Final - Empresa 1/website/node_modules/react-router/dist/development/register-roq_0qYo.d.ts",
     "Proyecto Final - Empresa 1/website/node_modules/react-router/dist/production/lib/types/internal.d.ts",
-    "Proyecto Final - Empresa 1/website/node_modules/react-router/dist/development/lib/types/internal.d.ts",
     "Proyecto Final - Empresa 1/website/node_modules/react-router/docs/start/declarative/routing.md",
     "Proyecto Final - Empresa 1/website/node_modules/react-router/docs/start/framework/testing.md",
     "Proyecto Final - Empresa 1/website/node_modules/react-router/docs/start/framework/routing.md",
