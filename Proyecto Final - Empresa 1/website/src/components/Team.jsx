@@ -68,6 +68,19 @@ const teamMembers = [
       'Documentación Técnica'
     ],
     image: '/randy.jpeg'
+  },
+  {
+    name: 'Darling',
+    role: 'Redactor Técnico y Controlador de Documentos',
+    bio: 'Profesional en el área de Tecnología e Informática, con formación en redes de computadoras, administración de sistemas y documentación técnica. Me desempeño como Redactor Técnico y Controlador de Documentos, participando en la elaboración, organización y control de la documentación técnica del proyecto. Cuento con conocimientos en diagramas de infraestructura, registros de configuración, bitácoras de red y elaboración de manuales técnicos, contribuyendo a mantener una documentación clara, organizada y profesional.',
+    specialties: 'Diagramas de infraestructura, registros de configuración, bitácoras de red y manuales técnicos.',
+    certifications: [
+      'Cisco CCNA',
+      'CompTIA Network+',
+      'Fortinet FCF',
+      'Azure AZ-900'
+    ],
+    image: '/darling.jpeg'
   }
 ];
 
