@@ -33,12 +33,6 @@ interface Ethernet1/1
  ip address 1.0.0.13 255.255.255.252
  no shutdown
 
-end
-write memory
-
-
-
-configure terminal
 
 ip route 10.0.0.0 255.255.254.0 1.0.0.14
 ip route 10.0.2.0 255.255.254.0 1.0.0.14
