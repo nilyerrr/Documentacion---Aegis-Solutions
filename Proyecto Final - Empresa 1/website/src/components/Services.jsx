@@ -12,7 +12,13 @@ const servicesList = [
       'Mesa de Ayuda (Soporte Técnico Tier 1/2)',
       'Administración de Switches, Routers y Firewalls',
       'Inventario de activos y reportes mensuales'
-    ]
+    ],
+    details: {
+      positioning: 'Infraestructura de red confiable sin monitoreo de seguridad 24/7. Para empresas que necesitan estabilidad operativa pero no manejan datos altamente regulados.',
+      idealClient: 'Retail, manufactura, logística',
+      employees: '50–200 empleados',
+      notIncluded: ['Monitoreo de seguridad 24/7', 'Análisis de malware', 'Gestión de endpoints (EDR)', 'Cumplimiento normativo']
+    }
   },
   { 
     id: 'shield', 
@@ -24,7 +30,13 @@ const servicesList = [
       'SOC 24/7 (Monitoreo, SIEM, triaje de alertas)',
       'Gestión de Endpoints (EDR)',
       'Cumplimiento y Respuesta a Incidentes (DFIR)'
-    ]
+    ],
+    details: {
+      positioning: 'El estándar de la industria. SOC 24/7 + infraestructura completa. Para empresas reguladas (HIPAA, ISO 27001, PCI-DSS) que necesitan monitoreo constante y respuesta a incidentes.',
+      idealClient: 'Salud, finanzas, gobierno',
+      employees: '100–500 empleados',
+      notIncluded: ['Auditoría ofensiva / Red Team', 'Pentesting recurrente', 'Threat Hunting proactivo', 'vCISO dedicado']
+    }
   },
   { 
     id: 'fortress', 
@@ -36,7 +48,13 @@ const servicesList = [
       'Auditoría Ofensiva Continua (Red Team)',
       'Threat Hunting y Pentesting recurrente',
       'vCISO Dedicado y SOC Tier 3 (Forense)'
-    ]
+    ],
+    details: {
+      positioning: 'Protección absoluta. Sustituye por completo a un departamento interno de ciberseguridad. Para organizaciones con alta exposición de riesgo y requisitos de cumplimiento estrictos.',
+      idealClient: 'Bancos, multinacionales, data centers',
+      employees: '300–1,000+ empleados',
+      notIncluded: []
+    }
   },
   { 
     id: 'od1', 
@@ -48,7 +66,13 @@ const servicesList = [
       'Pruebas de aplicaciones web',
       'Reporte detallado con CVSS scoring',
       'Proyecto bajo demanda (2-4 semanas)'
-    ]
+    ],
+    details: {
+      positioning: 'Evaluación exhaustiva para descubrir vulnerabilidades en tu entorno actual antes de que sean explotadas.',
+      idealClient: 'Empresas que van a lanzar un nuevo producto o requieren cumplir con normativas anuales',
+      employees: 'Cualquier tamaño',
+      notIncluded: []
+    }
   },
   { 
     id: 'od2', 
@@ -60,7 +84,13 @@ const servicesList = [
       'Evaluación de vector de entrada',
       'Prueba de movimiento lateral y exfiltración',
       'Proyecto bajo demanda (3-6 semanas)'
-    ]
+    ],
+    details: {
+      positioning: 'Simulación de adversarios reales (APT). Evaluamos no solo la tecnología, sino las personas y los procesos defensivos (SOC).',
+      idealClient: 'Empresas maduras con un SOC establecido que desean poner a prueba sus capacidades de detección',
+      employees: 'Cualquier tamaño',
+      notIncluded: []
+    }
   },
   { 
     id: 'od3', 
@@ -72,12 +102,19 @@ const servicesList = [
       'Evaluación de brechas (Gap Analysis)',
       'Diseño de políticas de seguridad',
       'Preparación integral para certificación'
-    ]
+    ],
+    details: {
+      positioning: 'Acompañamiento especializado para estructurar los procesos de la empresa y lograr certificaciones internacionales de seguridad.',
+      idealClient: 'Instituciones financieras, salud, o empresas buscando expandirse a mercados internacionales',
+      employees: 'Cualquier tamaño',
+      notIncluded: ['Auditoría final de certificación (debe hacerla un tercero independiente)']
+    }
   }
 ];
 
 const Services = () => {
   const [selectedServices, setSelectedServices] = useState([]);
+  const [expandedServices, setExpandedServices] = useState([]);
   const navigate = useNavigate();
 
   const toggleService = (id) => {
@@ -85,6 +122,15 @@ const Services = () => {
       setSelectedServices(selectedServices.filter(s => s !== id));
     } else {
       setSelectedServices([...selectedServices, id]);
+    }
+  };
+
+  const toggleExpand = (e, id) => {
+    e.stopPropagation();
+    if (expandedServices.includes(id)) {
+      setExpandedServices(expandedServices.filter(s => s !== id));
+    } else {
+      setExpandedServices([...expandedServices, id]);
     }
   };
 
@@ -110,6 +156,8 @@ const Services = () => {
         <div className="grid grid-cols-3" style={{ marginBottom: '3rem', alignItems: 'stretch' }}>
           {servicesList.map((service) => {
             const isSelected = selectedServices.includes(service.id);
+            const isExpanded = expandedServices.includes(service.id);
+            
             return (
               <div 
                 key={service.id} 
@@ -122,7 +170,8 @@ const Services = () => {
                   transform: isSelected ? 'translateY(-5px)' : 'none',
                   boxShadow: isSelected ? '0 10px 30px rgba(212, 175, 55, 0.15)' : 'none',
                   display: 'flex',
-                  flexDirection: 'column'
+                  flexDirection: 'column',
+                  transition: 'all 0.3s ease'
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
@@ -143,14 +192,45 @@ const Services = () => {
                   paddingLeft: '1.2rem', 
                   color: 'var(--text-muted)', 
                   fontSize: '0.95rem', 
-                  marginBottom: '1.5rem', 
-                  flexGrow: 1,
+                  marginBottom: '1rem', 
                   listStyleType: 'square'
                 }}>
                   {service.features.map((feat, idx) => (
                     <li key={idx} style={{ marginBottom: '0.5rem', lineHeight: '1.4' }}>{feat}</li>
                   ))}
                 </ul>
+
+                <button 
+                  onClick={(e) => toggleExpand(e, service.id)}
+                  style={{ 
+                    background: 'transparent', border: 'none', color: 'var(--primary)', 
+                    cursor: 'pointer', textDecoration: 'underline', marginBottom: '1.5rem',
+                    textAlign: 'left', padding: 0, fontSize: '0.9rem', fontWeight: 500
+                  }}
+                >
+                  {isExpanded ? 'Ocultar detalles ▲' : 'Ver más detalles ▼'}
+                </button>
+
+                {isExpanded && (
+                  <div style={{ 
+                    background: 'rgba(0,0,0,0.3)', padding: '1rem', borderRadius: '8px', 
+                    marginBottom: '1.5rem', fontSize: '0.85rem', color: 'var(--text-muted)',
+                    borderLeft: '3px solid var(--primary)'
+                  }}>
+                    <p style={{ marginBottom: '0.8rem' }}><strong style={{ color: 'var(--text-main)' }}>Enfoque:</strong> {service.details.positioning}</p>
+                    <p style={{ marginBottom: '0.8rem' }}><strong style={{ color: 'var(--text-main)' }}>Cliente Ideal:</strong> {service.details.idealClient} ({service.details.employees})</p>
+                    {service.details.notIncluded.length > 0 && (
+                      <>
+                        <strong style={{ color: '#ff6b6b' }}>Lo que NO incluye:</strong>
+                        <ul style={{ paddingLeft: '1.2rem', marginTop: '0.3rem', marginBottom: 0 }}>
+                          {service.details.notIncluded.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                  </div>
+                )}
 
                 <div style={{ 
                   fontWeight: 600, 
