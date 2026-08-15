@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de Topologia.md",
+                "file": "Proyecto Final - Empresa 1/Scrip Romana/R-Romana.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Estructura de Topologia"
+              "title": "R-Romana"
             }
           }
         ]
@@ -201,8 +201,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3fd444f2ed9c5645",
+  "active": "f6ed4e7594de5dd3",
   "lastOpenFiles": [
+    "Proyecto Final - Empresa 1/Scrip Romana/SW-3.md",
+    "Proyecto Final - Empresa 1/Scrip Romana/SW-9.md",
+    "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de Topologia.md",
     "Proyecto Final - Empresa 1/website/node_modules/oxlint/dist/plugins-dev.js",
     "Proyecto Final - Empresa 1/website/node_modules/oxlint/dist/workspace2.js",
     "Proyecto Final - Empresa 1/website/node_modules/oxlint/dist/utils.js",
@@ -213,7 +216,6 @@
     "Proyecto Final - Empresa 1/website/node_modules/oxlint/dist/js_config.js",
     "Proyecto Final - Empresa 1/website/node_modules/oxlint/dist/index.js",
     "Proyecto Final - Empresa 1/website/node_modules/oxlint/dist/index.d.ts",
-    "Proyecto Final - Empresa 1/website/node_modules/oxlint/dist/cli.js",
     "Proyecto Final - Empresa 1/website/node_modules/tsparticles-updater-opacity/README.md",
     "Proyecto Final - Empresa 1/website/node_modules/tsparticles-updater-color/README.md",
     "Proyecto Final - Empresa 1/website/node_modules/tsparticles-updater-rotate/README.md",
@@ -232,7 +234,6 @@
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Roles y cargos de los integrantes.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Cotizacion por nuestros servicios.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de empresa.md",
-    "Proyecto Final - Empresa 1/Detalles de la Empresa/Estructura de Topologia.md",
     "Proyecto Final - Empresa 1/Detalles de la Empresa/Sobre Nosotros.md",
     "Proyecto Final - Empresa 1/website/node_modules/react-router/LICENSE.md",
     "Proyecto Final - Empresa 1/website/node_modules/react-router/docs/start/declarative/routing.md",
@@ -248,7 +249,6 @@
     "Proyecto Final - Empresa 1/website/node_modules/react-router/docs/start/framework/data-loading.md",
     "Proyecto Final - Empresa 1/website/node_modules/react-router/docs/start/framework/actions.md",
     "Proyecto Final - Empresa 1/website/node_modules/react-router/docs/start/declarative/url-values.md",
-    "Proyecto Final - Empresa 1/website/node_modules/react-router/docs/start/declarative/navigating.md",
     "Proyecto Final - Empresa 1/Untitled.canvas"
   ]
 }
