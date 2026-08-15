@@ -1,10 +1,11 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import Stats from '../components/Stats';
 import Features from '../components/Features';
 
 const valores = [
   { title: 'Invulnerabilidad y Excelencia Operativa', desc: 'Buscamos la máxima precisión en cada capa de seguridad y arquitectura de red, garantizando un escudo impenetrable frente a amenazas y asegurando niveles óptimos de estabilidad.' },
-  { title: 'Confidencialidad e Integridad', desc: 'Asumimos con estricto rigor ético el resguardo de la información y la continuidad de las operaciones de nuestros clientes.' },
+  { title: 'Confidencialidad e Integridad', desc: 'Asumimos con estricto rigor ético el resguardo de la información y la continuity de las operaciones de nuestros clientes.' },
   { title: 'Innovación y Proactividad', desc: 'Anticipamos los riesgos y las amenazas emergentes mediante el monitoreo constante y la adopción de tecnologías de vanguardia.' },
   { title: 'Calidad y Alta Disponibilidad', desc: 'Diseñamos e implementamos redes e infraestructuras bajo arquitecturas redundantes y eficientes.' },
   { title: 'Compromiso y Alianza Estratégica', desc: 'Tratamos la seguridad de nuestros clientes como la nuestra propia, estableciendo relaciones de confianza a largo plazo.' }
@@ -14,6 +15,7 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <Stats />
       <section className="section" style={{ background: 'var(--bg-color)' }}>
         <div className="container" style={{ maxWidth: '1000px' }}>
           <div className="grid grid-cols-2" style={{ gap: '4rem', alignItems: 'center' }}>
