@@ -1,16 +1,16 @@
 import React from 'react';
 
 const partners = [
-  { name: 'Cisco', desc: 'Networking & Security Architecture', icon: '🌐' },
-  { name: 'Fortinet', desc: 'Next-Generation Firewalls (NGFW)', icon: '🛡️' },
-  { name: 'Palo Alto Networks', desc: 'Advanced Threat Prevention', icon: '🔒' },
-  { name: 'Amazon Web Services', desc: 'Cloud Infrastructure & Security', icon: '☁️' },
-  { name: 'Google Cloud Platform', desc: 'Cloud Native Defense & AI', icon: '⚡' },
-  { name: 'Microsoft Azure', desc: 'Enterprise Cloud & Identity', icon: '☁️' },
-  { name: 'Juniper Networks', desc: 'High-Performance Routing', icon: '📡' },
-  { name: 'CrowdStrike', desc: 'Endpoint Detection & Response (EDR)', icon: '🦅' },
-  { name: 'Splunk', desc: 'SIEM & Security Analytics', icon: '📊' },
-  { name: 'Hack The Box', desc: 'Offensive Security & Red Team', icon: '🎯' }
+  { name: 'Cisco', desc: 'Networking & Security Architecture', image: '/cisco.png' },
+  { name: 'Fortinet', desc: 'Next-Generation Firewalls (NGFW)', image: '/fortinet.png' },
+  { name: 'Palo Alto Networks', desc: 'Advanced Threat Prevention', image: '/paloalto.png' },
+  { name: 'Amazon Web Services', desc: 'Cloud Infrastructure & Security', image: '/amazon.png' },
+  { name: 'Google Cloud Platform', desc: 'Cloud Native Defense & AI', image: '/google.png' },
+  { name: 'Microsoft Azure', desc: 'Enterprise Cloud & Identity', image: '/azure.png' },
+  { name: 'Juniper Networks', desc: 'High-Performance Routing', image: '/jupiter.png' },
+  { name: 'CrowdStrike', desc: 'Endpoint Detection & Response (EDR)', image: '/crowstrike.png' },
+  { name: 'Splunk', desc: 'SIEM & Security Analytics', image: '/splunk.png' },
+  { name: 'Hack The Box', desc: 'Offensive Security & Red Team', image: '/hackthebox.png' }
 ];
 
 const Partners = () => {
@@ -40,7 +40,9 @@ const Partners = () => {
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 cursor: 'default'
               }}>
-                <div style={{ fontSize: '3rem' }}>{partner.icon}</div>
+                <div style={{ width: '60px', height: '60px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <img src={partner.image} alt={partner.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                </div>
                 <div>
                   <h3 style={{ fontSize: '1.5rem', color: 'var(--text-main)', marginBottom: '0.3rem' }}>{partner.name}</h3>
                   <p style={{ color: 'var(--primary)', fontWeight: 500 }}>{partner.desc}</p>
