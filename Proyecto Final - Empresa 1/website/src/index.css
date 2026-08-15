@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  --primary: #00F0FF; /* Cyberpunk cyan */
-  --primary-dark: #008b94;
-  --secondary: #7000FF; /* Deep purple */
-  --bg-color: #0A0A0F; /* Very dark blue/black */
-  --surface: #14141F;
-  --surface-light: #1E1E2E;
-  --text-main: #FFFFFF;
-  --text-muted: #A0A0B0;
-  --border: #2A2A3F;
-  --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  --shadow: 0 8px 32px rgba(0, 240, 255, 0.15);
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --primary: #D4AF37; /* Oro metálico pulido */
+  --primary-hover: #b8962c;
+  --secondary: #205375; /* Azul petróleo */
+  --bg-color: #0D1117; /* Carbón oscuro */
+  --surface: #161B22;
+  --surface-light: #21262D;
+  --text-main: #F8F9FA; /* Crema suave */
+  --text-muted: #8B949E;
+  --border: #30363D;
+  --gradient: linear-gradient(135deg, var(--secondary) 0%, var(--bg-color) 100%);
+  --shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+  --transition: all 0.3s ease;
 }
 
 * {
@@ -23,7 +23,7 @@
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-main);
   line-height: 1.6;
@@ -32,12 +32,17 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   line-height: 1.2;
 }
 
+.text-primary {
+  color: var(--primary);
+}
+
 .text-gradient {
-  background: var(--gradient);
+  background: linear-gradient(90deg, var(--primary) 0%, #fff3c4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -60,7 +65,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   padding: 0.8rem 2rem;
-  border-radius: 50px;
+  border-radius: 4px; /* More corporate and modern */
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -70,43 +76,57 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: var(--gradient);
-  color: white;
-  box-shadow: var(--shadow);
+  background: var(--primary);
+  color: #000;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 240, 255, 0.3);
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
+  color: var(--text-main);
+  border: 2px solid var(--secondary);
 }
 
 .btn-outline:hover {
-  background: var(--primary);
-  color: var(--bg-color);
-  transform: translateY(-3px);
+  background: var(--secondary);
+  transform: translateY(-2px);
 }
 
 /* Glassmorphism Cards */
 .glass-card {
-  background: rgba(20, 20, 31, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2.5rem;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
 }
 
 .glass-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 240, 255, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: var(--secondary);
+  box-shadow: 0 10px 30px rgba(32, 83, 117, 0.2);
+}
+
+.glass-card:hover::before {
+  transform: scaleX(1);
 }
 
 /* Grid Layouts */
@@ -140,3 +160,16 @@ h1, h2, h3, h4, h5, h6 {
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
+
+/* Interactive Network Background */
+.network-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, var(--secondary) 0%, transparent 70%);
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
