@@ -37,7 +37,7 @@ const teamMembers = [
       'Cloud Security Specialist',
       'Admin. de Sistemas (Linux/Windows)'
     ],
-    image: '/starlin.png'
+    image: '/starlin.jpeg'
   },
   {
     name: 'Franchesca Soto Abreu',
