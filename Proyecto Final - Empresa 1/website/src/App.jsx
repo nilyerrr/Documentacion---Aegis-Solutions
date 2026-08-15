@@ -10,6 +10,7 @@ import AboutUs from './pages/AboutUs';
 import Partners from './pages/Partners';
 import Locations from './pages/Locations';
 import ContactPage from './pages/ContactPage';
+
 import ChatWidget from './components/ChatWidget';
 
 function App() {
