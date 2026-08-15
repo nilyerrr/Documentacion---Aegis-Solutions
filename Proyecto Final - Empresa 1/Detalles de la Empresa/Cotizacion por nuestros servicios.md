@@ -27,7 +27,6 @@ Para que nuestro posicionamiento sea competitivo y realista, estos son los rango
 | Mid-Market (100–1,000 empleados) | $7,000 – $25,000 | $50 – $200 | $15 – $30 |
 | Enterprise (1,000+ empleados) | $25,000 – $100,000+ | $100 – $200+ | $20 – $60 |
 
-**Fuentes:** MSSPProviders.io, Meriplex, CyberUpTive, Cipher Security (2026)
 
 ---
 
