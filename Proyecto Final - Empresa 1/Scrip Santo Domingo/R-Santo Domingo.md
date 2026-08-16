@@ -144,6 +144,29 @@ ip access-list extended NAT-INTERNAS
  deny ip 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255
  permit ip 10.0.0.0 0.255.255.255 any
 
+! 1. Crear la lista de acceso extendida
+ip access-list extended ACL-MARKETING-OUT
+ remark Bloquear Ping de Marketing a SOC/RedTeam/DFIR/ThreatIntel
+ deny icmp 10.0.16.0 0.0.0.127 10.0.0.0 0.0.7.255 echo
+ 
+ remark Bloquear Ping de Marketing a Malware Research Lab
+ deny icmp 10.0.16.0 0.0.0.127 10.0.17.64 0.0.0.15 echo
+ 
+ remark Permitir el resto de las comunicaciones
+ permit ip any any
+exit
+
+! 2. Aplicar en la interfaz que conecta al Switch Multicapa 1
+interface Ethernet0/2
+ ip access-group ACL-MARKETING-OUT in
+exit
+
+! 3. Aplicar en la interfaz que conecta al Switch Multicapa 2
+interface Ethernet0/1
+ ip access-group ACL-MARKETING-OUT in
+exit
+
+
 ip nat inside source list NAT-INTERNAS interface Ethernet0/0 overload
 
 ! --- 9. Aseguramiento de Lineas y Banner Institucional ---
