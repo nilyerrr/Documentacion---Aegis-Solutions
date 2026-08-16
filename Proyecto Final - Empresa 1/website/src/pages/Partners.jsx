@@ -2,15 +2,15 @@ import React from 'react';
 
 const partners = [
   { name: 'Cisco', image: '/cisco.png' },
-  { name: 'Fortinet', image: '/fortinet.png' },
-  { name: 'Palo Alto Networks', image: '/paloalto.png' },
+  { name: 'Fortinet', image: '/fortinet.png', scale: 1.5 },
+  { name: 'Palo Alto Networks', image: '/paloalto.svg' },
   { name: 'Amazon Web Services', image: '/amazon.png' },
-  { name: 'Google Cloud Platform', image: '/google.png' },
+  { name: 'Google Cloud Platform', image: '/google.svg' },
   { name: 'Microsoft Azure', image: '/azure.png' },
-  { name: 'Juniper Networks', image: '/jupiter.png' },
-  { name: 'CrowdStrike', image: '/crowstrike.png' },
+  { name: 'Juniper Networks', image: '/juniper.svg', scale: 1.5 },
+  { name: 'CrowdStrike', image: '/crowdstrike.svg' },
   { name: 'Splunk', image: '/splunk.png' },
-  { name: 'Hack The Box', image: '/hackthebox.png' }
+  { name: 'Hack The Box', image: '/hackthebox.svg' }
 ];
 
 const Partners = () => {
@@ -62,7 +62,7 @@ const Partners = () => {
                 <img 
                   src={partner.image} 
                   alt={partner.name} 
-                  style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} 
+                  style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', transform: partner.scale ? `scale(${partner.scale})` : 'none' }} 
                 />
               </div>
             ))}
