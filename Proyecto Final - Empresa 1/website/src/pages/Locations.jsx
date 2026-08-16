@@ -6,6 +6,7 @@ const Locations = () => {
       <section className="section">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <img src="/logo.png" alt="Aegis Logo" style={{ height: '80px', margin: '0 auto 1.5rem auto', display: 'block' }} />
             <h1 className="text-gradient" style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>Nuestras Sedes</h1>
           </div>
           

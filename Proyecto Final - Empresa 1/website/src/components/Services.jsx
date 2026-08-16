@@ -105,6 +105,7 @@ const Services = () => {
     <section id="servicios" className="section" style={{ background: 'var(--bg-color)', minHeight: '100vh', paddingBottom: '4rem' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <img src="/logo.png" alt="Aegis Logo" style={{ height: '80px', margin: '0 auto 1.5rem auto', display: 'block' }} />
           <h2 className="text-gradient" style={{ fontSize: '3rem', marginBottom: '1rem' }}>Nuestros Servicios</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto' }}>
             Explora nuestros planes de suscripción y auditorías bajo demanda diseñados para blindar tu infraestructura tecnológica.

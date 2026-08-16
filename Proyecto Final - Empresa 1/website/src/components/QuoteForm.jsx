@@ -21,6 +21,7 @@ const QuoteForm = () => {
     <section id="contacto" className="section" style={{ background: 'var(--bg-color)' }}>
       <div className="container" style={{ maxWidth: '800px' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <img src="/logo.png" alt="Aegis Logo" style={{ height: '80px', margin: '0 auto 1.5rem auto', display: 'block' }} />
           <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Contacto</h2>
           <p style={{ color: 'var(--text-muted)' }}>Déjenos sus datos y le prepararemos una propuesta a medida.</p>
         </div>
