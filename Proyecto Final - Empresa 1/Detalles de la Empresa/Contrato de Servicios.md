@@ -45,6 +45,8 @@ El Cliente contrata a AEGIS Solutions para la prestación de servicios de seguri
 
 ---
 
+
+
 ## 3. ACUERDOS DE NIVEL DE SERVICIO (SLA)
 
 AEGIS se compromete a cumplir con los siguientes Tiempos de Respuesta (TDR) frente a incidencias detectadas en la infraestructura del Cliente:
@@ -76,6 +78,9 @@ AEGIS se compromete a cumplir con los siguientes Tiempos de Respuesta (TDR) fren
 3. Ninguna de las Partes divulgará información confidencial a terceros sin el previo consentimiento por escrito, excepto cuando sea requerido por la ley. Esta obligación de confidencialidad perdurará por cinco (5) años tras la terminación de este Contrato.
 
 ---
+
+
+
 
 ## 6. LIMITACIÓN DE RESPONSABILIDAD
 
@@ -116,6 +121,11 @@ _______________________________________
 **Fecha:**  
 
 <br><br>
+
+
+
+
+
 
 **POR EL CLIENTE:**
 
