@@ -163,6 +163,31 @@ ip access-list extended VPN-TRAFFIC
  permit ip 10.0.6.0 0.0.1.255 10.0.0.0 0.255.255.255
  permit ip 10.0.17.64 0.0.0.15 10.0.0.0 0.255.255.255
 
+
+! 1. Creamos la lista de acceso
+ip access-list extended ISOLATE-MALWARE-SD
+
+ ! Bloqueamos hacia Ventas (10.0.13.0/24)
+ deny ip 10.0.17.64 0.0.0.15 10.0.13.0 0.0.0.255 log
+ 
+ ! Bloqueamos hacia Finanzas (10.0.15.0/25)
+ deny ip 10.0.17.64 0.0.0.15 10.0.15.0 0.0.0.127 log
+
+ ! Bloqueamos hacia Marketing, Direccion y Cumplimiento (10.0.16.0 al 10.0.16.255)
+ deny ip 10.0.17.64 0.0.0.15 10.0.16.0 0.0.0.255 log
+
+ ! Bloqueamos hacia Soporte Tecnico y RRHH (10.0.17.0 al 10.0.17.63)
+ deny ip 10.0.17.64 0.0.0.15 10.0.17.0 0.0.0.63 log
+
+ ! Permitimos todo el resto del trafico (Internet, VPN o consultas locales)
+ permit ip any any
+exit
+
+! 2. Aplicamos la ACL en la subinterfaz del laboratorio
+interface Ethernet0/1.320
+ ip access-group ISOLATE-MALWARE-SD in
+exit
+
 ip access-list extended NAT-INTERNAS
  remark Trafico hacia Internet
  deny ip 10.0.0.0 0.0.1.255 10.0.0.0 0.255.255.255
