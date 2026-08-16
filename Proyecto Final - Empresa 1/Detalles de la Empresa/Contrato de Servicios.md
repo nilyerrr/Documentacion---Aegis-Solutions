@@ -14,7 +14,7 @@ Y
 
 **[Nombre del Cliente / Empresa]**, una entidad debidamente registrada, con domicilio en [Dirección del Cliente], representada en este acto por [Nombre del Representante del Cliente], en su carácter de [Cargo] (en adelante, el "**Cliente**").
 
-(Ambos referidos en conjunto como las "Partes").
+
 
 ---
 
@@ -25,7 +25,8 @@ El Cliente contrata a AEGIS Solutions para la prestación de servicios de seguri
 ### Plan Seleccionado: [ ] AEGIS Core / [ ] AEGIS Shield / [ ] AEGIS Fortress
 
 **Descripción general del plan:**
-[BREVE DESCRIPCIÓN DEL PLAN SELECCIONADO - Ejemplo para Shield: Proveer monitoreo de red SOC 24/7, triaje de alertas mediante SIEM, gestión de endpoints (EDR), adecuación a normativas y respuesta a incidentes de emergencia garantizada en menos de 1 hora.]
+
+
 
 ---
 
