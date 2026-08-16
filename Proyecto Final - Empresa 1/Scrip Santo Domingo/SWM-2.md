@@ -150,6 +150,28 @@ interface Vlan70
  standby 70 preempt
  no shutdown
 
+! --- ACL para impedir comunicacion hacia finanzas 
+
+! 1. Creamos la lista de acceso directamente en el Switch Multicapa
+ip access-list extended ISOLATE-FINANCE
+ remark Permitir acceso a Direccion General (VLAN 10)
+ permit ip 10.0.16.192 0.0.0.31 10.0.15.0 0.0.0.127
+ 
+ remark Permitir acceso a Cumplimiento y Auditoria (VLAN 30)
+ permit ip 10.0.16.224 0.0.0.31 10.0.15.0 0.0.0.127
+ 
+ remark Bloquear cualquier otro intento de alcanzar a Finanzas
+ deny ip any 10.0.15.0 0.0.0.127
+ 
+ remark Permitir el resto del trafico de la red
+ permit ip any any
+exit
+
+! 2. Aplicamos la lista en la interfaz virtual de Finanzas (Direccion de SALIDA)
+interface vlan 50
+ ip access-group ISOLATE-FINANCE out
+exit
+
 ! --- OSPF ---
 router ospf 1
  router-id 3.3.3.3
