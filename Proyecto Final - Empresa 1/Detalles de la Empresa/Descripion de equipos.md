@@ -193,18 +193,18 @@ tags:
 
 ### 9. Router R-ROMANA
 
-| Campo | Detalle |
-|---|---|
-| **Tipo / Modelo** | Router de sucursal (Branch Router) / Cisco 7200 (emulado) |
-| **Cantidad** | 1 |
-| **Función** | Conecta La Romana con Internet. Enruta el tráfico de las VLANs de Consultoría TI, Dirección Regional e Ingeniería de Infraestructura mediante **Router-on-a-Stick** (subinterfaces 802.1Q). |
-| **Interfaces** | `e0/1.210` → Dir. Regional (10.0.16.129/26) \| `e0/1.220` → Consultoría TI (10.0.8.1/23) \| `e0/1.230` → Infraestructura (10.0.15.129/25) \| `e0/0` → ISP (1.0.0.10/30) \| `Tunnel1` → 10.1.100.3/24 (Spoke DMVPN) |
-| **OSPF** | Área 30 (La Romana) + Área 0 (Túnel DMVPN) |
-| **DHCP** | 3 pools por VLAN (210, 220, 230) |
-| **Seguridad** | SSHv2, NAT Overload, ACLs `VPN-TRAFFIC` / `NAT-INTERNAS`, banner MOTD |
-| **Credenciales** | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026` |
-| **IPsec Key** | `AEGIS-2026-VPN` |
-| **NHRP Auth** | `AEGIS` |
+| Campo             | Detalle                                                                                                                                                                                                            |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Tipo / Modelo** | Router de sucursal (Branch Router) / Cisco 7200 (emulado)                                                                                                                                                          |
+| **Cantidad**      | 1                                                                                                                                                                                                                  |
+| **Función**       | Conecta La Romana con Internet. Enruta el tráfico de las VLANs de Consultoría TI, Dirección Regional e Ingeniería de Infraestructura mediante **Router-on-a-Stick** (subinterfaces 802.1Q).                        |
+| **Interfaces**    | `e0/1.210` → Dir. Regional (10.0.16.129/26) \| `e0/1.220` → Consultoría TI (10.0.8.1/23) \| `e0/1.230` → Infraestructura (10.0.15.129/25) \| `e0/0` → ISP (1.0.0.10/30) \| `Tunnel1` → 10.1.100.3/24 (Spoke DMVPN) |
+| **OSPF**          | Área 30 (La Romana) + Área 0 (Túnel DMVPN)                                                                                                                                                                         |
+| **DHCP**          | 3 pools por VLAN (210, 220, 230)                                                                                                                                                                                   |
+| **Seguridad**     | SSHv2, NAT Overload, ACLs `VPN-TRAFFIC` / `NAT-INTERNAS`, banner MOTD                                                                                                                                              |
+| **Credenciales**  | `enable secret AEGIS-2026` / `username admin privilege 15 secret AEGIS-2026`                                                                                                                                       |
+| **IPsec Key**     | `AEGIS-2026-VPN`                                                                                                                                                                                                   |
+| **NHRP Auth**     | `AEGIS`                                                                                                                                                                                                            |
 
 ### 10. Switch SW-3 (La Romana) — Distribución
 
