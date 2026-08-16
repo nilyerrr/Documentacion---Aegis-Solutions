@@ -46,7 +46,7 @@ const teamMembers = [
   },
   {
     name: 'Franchesca Soto Abreu',
-    role: 'Redactor Técnico & Controlador Documental',
+    role: 'Redactora Técnica & Controladora Documental',
     bio: 'Estudiante de Tecnología/Informática enfocada en redes, infraestructura y control documental técnico. Destaca por su organización, precisión y capacidad para estructurar información técnica compleja de forma clara y accesible. Diseña manuales de servicio, procedimientos de entrega y bitácoras operativas.',
     specialties: 'Redes de computadoras, administración de sistemas, gestión de proyectos y diagramación lógica/física.',
     certifications: [

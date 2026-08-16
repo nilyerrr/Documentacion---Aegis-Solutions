@@ -13,10 +13,12 @@ import ContactPage from './pages/ContactPage';
 
 import ChatWidget from './components/ChatWidget';
 import NetworkBackground from './components/NetworkBackground';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <NetworkBackground />
       <Navbar />
       <Routes>
