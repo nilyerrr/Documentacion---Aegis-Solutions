@@ -4,7 +4,7 @@ const teamMembers = [
   {
     name: 'Ing. Reylin Santana',
     role: 'CEO & CISO',
-    bio: 'Soy un líder estratega y especialista técnico enfocado en la protección de infraestructuras críticas y la mitigación de ciberamenazas. Mi visión se centra en cerrar la brecha entre la gestión empresarial de alto nivel y la ingeniería táctica de seguridad. Como fundador y director de AEGIS Solutions, mi misión es elevar los estándares de resiliencia digital en la región, construyendo arquitecturas de red impenetrables y equipos de respuesta a incidentes de clase mundial.',
+    bio: 'Líder estratega y especialista técnico enfocado en la protección de infraestructuras críticas y la mitigación de ciberamenazas. Su visión se centra en cerrar la brecha entre la gestión empresarial de alto nivel y la ingeniería táctica de seguridad. Como fundador y director de AEGIS Solutions, su misión es elevar los estándares de resiliencia digital en la región, construyendo arquitecturas de red impenetrables y equipos de respuesta a incidentes de clase mundial.',
     specialties: 'Respuesta a Incidentes (DFIR), Threat Hunting, Arquitectura de Redes Seguras y Auditoría de Sistemas.',
     certifications: [
       'GCIH (SANS) & eCIR (INE)',
@@ -18,7 +18,7 @@ const teamMembers = [
   {
     name: 'Ing. Neury',
     role: 'VP Engineer, CTO & Arquitecto de Red',
-    bio: 'Ingeniero en Ciberseguridad egresado del Instituto Tecnológico de Santo Domingo (INTEC), con un Máster en Arquitectura de Redes y Telecomunicaciones por la Universidad de Stanford, y un Doctorado (PhD) en Arquitectura de Redes de Próxima Generación por el Instituto Tecnológico de Massachusetts (MIT). Con más de una década de experiencia al más alto nivel en la elaboración y diseño de arquitecturas de redes corporativas a gran escala. Soy un experto indiscutible en el área tecnológica, cuya trayectoria se ha forjado liderando la innovación, garantizando la máxima resiliencia en infraestructuras críticas y definiendo la visión estratégica para el despliegue de soluciones de clase mundial.',
+    bio: 'Ingeniero en Ciberseguridad egresado del Instituto Tecnológico de Santo Domingo (INTEC), con un Máster en Arquitectura de Redes y Telecomunicaciones por la Universidad de Stanford, y un Doctorado (PhD) en Arquitectura de Redes de Próxima Generación por el Instituto Tecnológico de Massachusetts (MIT). Con más de una década de experiencia al más alto nivel en la elaboración y diseño de arquitecturas de redes corporativas a gran escala. Experto indiscutible en el área tecnológica, cuya trayectoria se ha forjado liderando la innovación, garantizando la máxima resiliencia en infraestructuras críticas y definiendo la visión estratégica para el despliegue de soluciones de clase mundial.',
     specialties: 'Elaboración y diseño de arquitecturas de redes corporativas a gran escala, innovación y resiliencia.',
     certifications: [
       'Cisco CCAr',
@@ -73,7 +73,7 @@ const teamMembers = [
   {
     name: 'Darling',
     role: 'Redactor Técnico y Controlador de Documentos',
-    bio: 'Profesional en el área de Tecnología e Informática, con formación en redes de computadoras, administración de sistemas y documentación técnica. Me desempeño como Redactor Técnico y Controlador de Documentos, participando en la elaboración, organización y control de la documentación técnica del proyecto. Cuento con conocimientos en diagramas de infraestructura, registros de configuración, bitácoras de red y elaboración de manuales técnicos, contribuyendo a mantener una documentación clara, organizada y profesional.',
+    bio: 'Profesional en el área de Tecnología e Informática, con formación en redes de computadoras, administración de sistemas y documentación técnica. Se desempeña como Redactor Técnico y Controlador de Documentos, participando en la elaboración, organización y control de la documentación técnica del proyecto. Cuenta con conocimientos en diagramas de infraestructura, registros de configuración, bitácoras de red y elaboración de manuales técnicos, contribuyendo a mantener una documentación clara, organizada y profesional.',
     specialties: 'Diagramas de infraestructura, registros de configuración, bitácoras de red y manuales técnicos.',
     certifications: [
       'Cisco CCNA',
