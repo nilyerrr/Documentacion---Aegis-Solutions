@@ -54,7 +54,6 @@ Funcion: Laboratorio Avanzado de Ciberseguridad
 
 # 1. Tabla VLSM - Direccionamiento Privado (Red: 10.0.0.0/9)
 
-Formula:   ![[Pasted image 20260806194510.png]]
 # Sede Principal - Santo Domingo
 
 | **Departamento**     | **VLAN** | **Hosts (+40%)** | **Red Asignada (CIDR)** | **Rango IP Utilizable** | **Broadcast** |
@@ -104,4 +103,4 @@ Formula:   ![[Pasted image 20260806194510.png]]
 | Enlace ISP ↔ Sede Santiago              | **1.0.0.4/30**          | 1.0.0.5 - 1.0.0.6       | 1.0.0.7       |
 | Enlace ISP ↔ Sede La Romana             | **1.0.0.8/30**          | 1.0.0.9 - 1.0.0.10      | 1.0.0.11      |
 | Enlace ISP ↔ Sede Puerto Plata          | **1.0.0.12/30**         | 1.0.0.13 - 1.0.0.14     | 1.0.0.15      |
-| NAT / Servicios Web y Correo (Santiago) | **1.0.0.16/28**         | 1.0.0.17 - 1.0.0.30     | 1.0.0.31      |
+| NAT / Servicios Web y Correo (Santiago) | **1.0.0.16/28**         | 1.0.0.17 - 1.0.0.19     | 1.0.0.20      |
