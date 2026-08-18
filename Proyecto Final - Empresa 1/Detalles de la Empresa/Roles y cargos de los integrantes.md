@@ -48,9 +48,8 @@ tags:
               ├──────────────┬──────────────┬────────────┼──────────────┐
               │              │              │            │              │
     ┌─────────┴────────┐ ┌───┴─────────┐ ┌──┴───────┐ ┌──┴───────┐ ┌────┴──────┐
-    │ A. Conf. Básica  │ │ B. Redes y  │ │ C. Segur.│ │ D. Doc. y │ │ (mismo    │
-    │    (L2)          │ │   Servicios │ │          │ │   Planif. │ │  equipo)  │
-    │ Franchesca       │ │ Neury,      │ │ Reylin   │ │ Randy,    │ │           │
+    │ A. Conf. Básica  │ │ B. Redes y  │ │ C. Segur.│ │ D. Doc. y │ │VLSM         │
+    │    (L2)          │ │   Servicios │ │          │ │   Planif. │ │Franchesca │           randy         │ │ Neury,      │ │ Reylin   │ │ Randy,    │ │           │
     │                  │ │ Starlin     │ │ (dual)   │ │ Darling   │ │           │
     └──────────────────┘ └────────────┘ └──────────┘ └───────────┘ └───────────┘
                              │
@@ -77,9 +76,9 @@ Este equipo reporta a la instancia superior de la directiva empresarial.
 
 ### A. Equipo de Configuración Básica — Estructura L2
 
-| Área             | Nombre     | Cargo                                                     | Responsabilidades                                                                                                   |
-| ---------------- | ---------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| **Conf. Básica** | Franchesca | **Compliance & Procurement Manager** *(rol técnico dual)* | Configuración de VLANs y puertos de acceso, redundancia de Capa 2 (STP) y administración de los switches de acceso. |
+| Área                 | Nombre     | Cargo                                                     | Responsabilidades                                                                                                          |
+| -------------------- | ---------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Planificación IP** | Franchesca | **Compliance & Procurement Manager** *(rol técnico dual)* | Defender cómo se segmentó la red `10.0.0.0/8` para crear las VLANs departamentales, optimizando el espacio de direcciones. |
 
 ### B. Equipo de Redes y Servicios — Conectividad L3
 
@@ -97,10 +96,10 @@ Este equipo reporta a la instancia superior de la directiva empresarial.
 
 ### D. Equipo de Documentación y Planificación IP
 
-| Área | Nombre | Cargo | Responsabilidades |
-|---|---|---|---|
-| **Planificación IP** | Randy | **DevOps & Release Engineer** *(rol dual)* | Diseño del esquema de direccionamiento (VLSM), tabla de asignación de direcciones y control de versiones (GitHub). |
-| **Entregables** | Darling | **Technical Writer & Document Controller** | Diagramas lógicos/físicos, registro de configuraciones, bitácoras de red y manuales de entregables. |
+| Área            | Nombre  | Cargo                                      | Responsabilidades                                                                                                  |
+| --------------- | ------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Conf basica     | Randy   | **DevOps & Release Engineer** *(rol dual)* | Diseño del esquema de direccionamiento (VLSM), tabla de asignación de direcciones y control de versiones (GitHub). |
+| **Entregables** | Darling | **Technical Writer & Document Controller** | Diagramas lógicos/físicos, registro de configuraciones, bitácoras de red y manuales de entregables.                |
 
 ---
 
