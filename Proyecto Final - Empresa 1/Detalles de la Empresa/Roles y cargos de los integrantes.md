@@ -96,34 +96,35 @@ Este equipo reporta a la instancia superior de la directiva empresarial.
 
 ### D. Equipo de Documentación y Planificación IP
 
-| Área            | Nombre  | Cargo                                      | Responsabilidades                                                                                                  |
-| --------------- | ------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| Conf basica     | Randy   | **DevOps & Release Engineer** *(rol dual)* | Diseño del esquema de direccionamiento (VLSM), tabla de asignación de direcciones y control de versiones (GitHub). |
-| **Entregables** | Darling | **Technical Writer & Document Controller** | Diagramas lógicos/físicos, registro de configuraciones, bitácoras de red y manuales de entregables.                |
+| Área            | Nombre  | Cargo                                      | Responsabilidades                                                                                   |
+| --------------- | ------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| Conf basica     | Randy   | **DevOps & Release Engineer** *(rol dual)* | encargado de hablar sobre la configuracion basica y control de versiones (GitHub).                  |
+| **Entregables** | Darling | **Technical Writer & Document Controller** | Diagramas lógicos/físicos, registro de configuraciones, bitácoras de red y manuales de entregables. |
 
 ---
 
 ## 🔧 Nivel 3 — Soporte Operativo
 
-| Nombre | Área de Soporte | Responsabilidad |
-|---|---|---|
-| **Starlin** | Servidores | Soporte técnico continuo de servidores y coordinación de proyectos web. |
+| Nombre         | Área de Soporte       | Responsabilidad                                                                                  |
+| -------------- | --------------------- | ------------------------------------------------------------------------------------------------ |
+| **Starlin**    | Servidores            | Soporte técnico continuo de servidores y coordinación de proyectos web.                          |
 | **Franchesca** | Legal y Adquisiciones | Registros operativos, normativas empresariales y costes de equipos estructurados y actualizados. |
 
 ---
 
 ## 📦 Matriz de Responsabilidades por Entregable
 
-| Entregable del proyecto                                 | Responsable(s)       | Estado |
-| ------------------------------------------------------- | -------------------- | ------ |
-| Topología y diseño LAN/WAN                              | Neury                | ✅      |
-| Scripts de Santo Domingo (R-SD, SWM-1/2, SW-10/11/12)   | Reylin + Neury       | ✅      |
-| Scripts de La Romana (R-ROMANA, SW-3, SW-9)             | Franchesca + Starlin | ✅      |
-| Scripts de Santiago (R-SANTIAGO, SWM-1/Sw-2, servicios) | Starlin + Randy      | ✅      |
-| VLSM y tabla de direccionamiento                        | Randy + Darling      | ✅      |
-| Documentación y diagramas                               | Darling              | ✅      |
-| Servicios de red (DHCP, DNS, FTP, MAIL, RADIUS)         | Starlin              | ✅      |
-| Seguridad perimetral (DMVPN, ACLs, Port Security)       | Reylin               | ✅      |
+| Entregable del proyecto                                 | Responsable(s) | Estado |     |
+| ------------------------------------------------------- | -------------- | ------ | --- |
+| Topología y diseño LAN/WAN                              | Neury          | ✅      |     |
+| Scripts de Santo Domingo (R-SD, SWM-1/2, SW-10/11/12)   | Reylin         | ✅      |     |
+| Scripts de La Romana (R-ROMANA, SW-3, SW-9)             | Reylin         | ✅      |     |
+| Scripts de Santiago (R-SANTIAGO, SWM-1/Sw-2, servicios) | Neury          | ✅      |     |
+| VLSM y tabla de direccionamiento                        | Franchesca     | ✅      |     |
+| Documentación y diagramas                               | Darling        | ✅      |     |
+| Servicios de red (DHCP, DNS, FTP, MAIL, RADIUS)         | Starlin        | ✅      |     |
+| Seguridad perimetral (DMVPN, ACLs, Port Security)       | Reylin         | ✅      |     |
+| Cotizacion y presupuesto para los equipos y servicios   | Franchesca     |        |     |
 
 ---
 
